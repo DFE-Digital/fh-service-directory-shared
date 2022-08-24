@@ -1,7 +1,7 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.Builders;
+namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class OrganisationDtoBuilder
 {

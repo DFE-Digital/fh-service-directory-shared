@@ -8,7 +8,7 @@ using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverys
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.Builders;
+namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class ServicesDtoBuilder
 {
