@@ -1,14 +1,9 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralLocation;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLocations;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceAtLocation;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
 
 public interface IOpenReferralServiceAtLocationDto
 {
     string Id { get; set; }
-    OpenReferralLocationDto Location { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralServiceAtLocationDto? other);
-    int GetHashCode();
-    string ToString();
+    IOpenReferralLocationDto Location { get; init; }
 }

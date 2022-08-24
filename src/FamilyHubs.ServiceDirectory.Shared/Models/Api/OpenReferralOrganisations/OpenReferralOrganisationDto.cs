@@ -1,11 +1,8 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralOrganisation;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 
 public record OpenReferralOrganisationDto : IOpenReferralOrganisationDto
 {
-    protected OpenReferralOrganisationDto()
-    {
-
-    }
+    public OpenReferralOrganisationDto() { }
     public OpenReferralOrganisationDto(
         string id,
         string? name,
@@ -21,7 +18,6 @@ public record OpenReferralOrganisationDto : IOpenReferralOrganisationDto
         Logo = logo;
         Uri = uri;
         Url = url;
-
     }
 
     public string Id { get; init; } = default!;

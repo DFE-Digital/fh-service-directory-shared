@@ -1,4 +1,4 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralEligibility;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
 
 public interface IOpenReferralEligibilityDto
 {
@@ -6,9 +6,4 @@ public interface IOpenReferralEligibilityDto
     string Id { get; init; }
     int Maximum_age { get; init; }
     int Minimum_age { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralEligibilityDto? other);
-    int GetHashCode();
-    string ToString();
 }

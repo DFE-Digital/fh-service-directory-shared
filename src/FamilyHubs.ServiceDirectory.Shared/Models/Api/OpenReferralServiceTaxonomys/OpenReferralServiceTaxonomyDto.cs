@@ -1,15 +1,15 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralTaxonomy;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralTaxonomys;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceTaxonomy;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
 
 public record OpenReferralServiceTaxonomyDto : IOpenReferralServiceTaxonomyDto
 {
-    private OpenReferralServiceTaxonomyDto() { }
-    public OpenReferralServiceTaxonomyDto(string id, OpenReferralTaxonomyDto? taxonomy)
+    public OpenReferralServiceTaxonomyDto() { }
+    public OpenReferralServiceTaxonomyDto(string id, IOpenReferralTaxonomyDto? taxonomy)
     {
         Id = id;
         Taxonomy = taxonomy;
     }
     public string Id { get; set; } = default!;
-    public OpenReferralTaxonomyDto? Taxonomy { get; init; }
+    public IOpenReferralTaxonomyDto? Taxonomy { get; init; }
 }

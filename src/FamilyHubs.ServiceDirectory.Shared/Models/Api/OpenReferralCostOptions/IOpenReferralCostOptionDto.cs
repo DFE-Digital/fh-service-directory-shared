@@ -1,4 +1,4 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralCostOption;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 
 public interface IOpenReferralCostOptionDto
 {

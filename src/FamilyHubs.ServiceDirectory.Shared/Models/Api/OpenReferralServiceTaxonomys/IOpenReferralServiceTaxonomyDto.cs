@@ -1,14 +1,9 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralTaxonomy;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralTaxonomys;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceTaxonomy;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
 
 public interface IOpenReferralServiceTaxonomyDto
 {
     string Id { get; set; }
-    OpenReferralTaxonomyDto? Taxonomy { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralServiceTaxonomyDto? other);
-    int GetHashCode();
-    string ToString();
+    IOpenReferralTaxonomyDto? Taxonomy { get; init; }
 }

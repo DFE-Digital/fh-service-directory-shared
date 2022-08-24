@@ -1,4 +1,4 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralPhysicalAddress;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhysicalAddresses;
 
 public interface IOpenReferralPhysicalAddressDto
 {

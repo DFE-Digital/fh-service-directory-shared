@@ -1,9 +1,8 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralTaxonomy;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralTaxonomys;
 
 public record OpenReferralTaxonomyDto : IOpenReferralTaxonomyDto
 {
-    private OpenReferralTaxonomyDto() { }
-
+    public OpenReferralTaxonomyDto() { }
     public OpenReferralTaxonomyDto(string id, string name, string? vocabulary, string? parent)
     {
         Id = id;

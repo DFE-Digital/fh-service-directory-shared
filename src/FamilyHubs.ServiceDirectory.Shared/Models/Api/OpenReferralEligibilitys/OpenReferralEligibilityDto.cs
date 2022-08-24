@@ -1,8 +1,8 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralEligibility;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
 
 public record OpenReferralEligibilityDto : IOpenReferralEligibilityDto
 {
-    private OpenReferralEligibilityDto() { }
+    public OpenReferralEligibilityDto() { }
     public OpenReferralEligibilityDto(string id, string eligibility, int maximum_age, int minimum_age)
     {
         Id = id;

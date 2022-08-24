@@ -1,4 +1,4 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralTaxonomy;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralTaxonomys;
 
 public interface IOpenReferralTaxonomyDto
 {
@@ -6,9 +6,4 @@ public interface IOpenReferralTaxonomyDto
     string Name { get; init; }
     string? Parent { get; init; }
     string? Vocabulary { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralTaxonomyDto? other);
-    int GetHashCode();
-    string ToString();
 }

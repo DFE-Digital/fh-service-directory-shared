@@ -1,4 +1,4 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralPhone;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhones;
 
 public interface IOpenReferralPhoneDto
 {

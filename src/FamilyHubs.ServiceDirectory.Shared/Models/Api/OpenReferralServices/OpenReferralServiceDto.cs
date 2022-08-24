@@ -1,18 +1,17 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralContact;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralCostOption;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralEligibility;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralLanguage;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceArea;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceAtLocation;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceDeliveryEx;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceTaxonomy;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralService;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 
 public record OpenReferralServiceDto : IOpenReferralServiceDto
 {
-    private OpenReferralServiceDto() { }
-
+    public OpenReferralServiceDto() { }
     public OpenReferralServiceDto(
         string id,
         string name,
@@ -27,13 +26,13 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         string? email,
         string? fees,
         ICollection<IOpenReferralServiceDeliveryExDto>? serviceDelivery,
-        ICollection<OpenReferralEligibilityDto>? eligibilities,
-        ICollection<OpenReferralContactDto>? contacts,
-        ICollection<OpenReferralCostOptionDto> cost_options,
-        ICollection<OpenReferralLanguageDto>? languages,
-        ICollection<OpenReferralServiceAreaDto>? service_areas,
-        ICollection<OpenReferralServiceAtLocationDto>? service_at_locations,
-        ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys
+        ICollection<IOpenReferralEligibilityDto>? eligibilities,
+        ICollection<IOpenReferralContactDto>? contacts,
+        ICollection<IOpenReferralCostOptionDto> cost_options,
+        ICollection<IOpenReferralLanguageDto>? languages,
+        ICollection<IOpenReferralServiceAreaDto>? service_areas,
+        ICollection<IOpenReferralServiceAtLocationDto>? service_at_locations,
+        ICollection<IOpenReferralServiceTaxonomyDto>? service_taxonomys
     )
     {
         Id = id;
@@ -71,11 +70,11 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public string? Email { get; init; }
     public string? Fees { get; init; }
     public ICollection<IOpenReferralServiceDeliveryExDto>? ServiceDelivery { get; init; }
-    public ICollection<OpenReferralEligibilityDto>? Eligibilities { get; init; }
-    public ICollection<OpenReferralContactDto>? Contacts { get; init; }
-    public ICollection<OpenReferralCostOptionDto>? Cost_options { get; init; }
-    public ICollection<OpenReferralLanguageDto>? Languages { get; init; }
-    public ICollection<OpenReferralServiceAreaDto>? Service_areas { get; init; }
-    public ICollection<OpenReferralServiceAtLocationDto>? Service_at_locations { get; init; }
-    public ICollection<OpenReferralServiceTaxonomyDto>? Service_taxonomys { get; init; }
+    public ICollection<IOpenReferralEligibilityDto>? Eligibilities { get; init; }
+    public ICollection<IOpenReferralContactDto>? Contacts { get; init; }
+    public ICollection<IOpenReferralCostOptionDto>? Cost_options { get; init; }
+    public ICollection<IOpenReferralLanguageDto>? Languages { get; init; }
+    public ICollection<IOpenReferralServiceAreaDto>? Service_areas { get; init; }
+    public ICollection<IOpenReferralServiceAtLocationDto>? Service_at_locations { get; init; }
+    public ICollection<IOpenReferralServiceTaxonomyDto>? Service_taxonomys { get; init; }
 }

@@ -1,13 +1,13 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralContact;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralCostOption;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralEligibility;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralLanguage;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceArea;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceAtLocation;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceDeliveryEx;
-using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralServiceTaxonomy;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralService;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 
 public interface IOpenReferralServiceDto
 {
@@ -15,25 +15,20 @@ public interface IOpenReferralServiceDto
     DateTime? Assured_date { get; init; }
     string? Attending_access { get; init; }
     string? Attending_type { get; init; }
-    ICollection<OpenReferralContactDto>? Contacts { get; init; }
-    ICollection<OpenReferralCostOptionDto>? Cost_options { get; init; }
+    ICollection<IOpenReferralContactDto>? Contacts { get; init; }
+    ICollection<IOpenReferralCostOptionDto>? Cost_options { get; init; }
     string? Deliverable_type { get; init; }
     string? Description { get; init; }
-    ICollection<OpenReferralEligibilityDto>? Eligibilities { get; init; }
+    ICollection<IOpenReferralEligibilityDto>? Eligibilities { get; init; }
     string? Email { get; init; }
     string? Fees { get; init; }
     string Id { get; init; }
-    ICollection<OpenReferralLanguageDto>? Languages { get; init; }
+    ICollection<IOpenReferralLanguageDto>? Languages { get; init; }
     string Name { get; init; }
-    ICollection<OpenReferralServiceAreaDto>? Service_areas { get; init; }
-    ICollection<OpenReferralServiceAtLocationDto>? Service_at_locations { get; init; }
-    ICollection<OpenReferralServiceTaxonomyDto>? Service_taxonomys { get; init; }
+    ICollection<IOpenReferralServiceAreaDto>? Service_areas { get; init; }
+    ICollection<IOpenReferralServiceAtLocationDto>? Service_at_locations { get; init; }
+    ICollection<IOpenReferralServiceTaxonomyDto>? Service_taxonomys { get; init; }
     ICollection<IOpenReferralServiceDeliveryExDto>? ServiceDelivery { get; init; }
     string? Status { get; init; }
     string? Url { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralServiceDto? other);
-    int GetHashCode();
-    string ToString();
 }

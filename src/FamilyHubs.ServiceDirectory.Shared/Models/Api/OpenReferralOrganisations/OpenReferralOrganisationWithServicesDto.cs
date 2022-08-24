@@ -1,13 +1,10 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralService;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralOrganisation;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 
-public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisationWithServicesDto 
+public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisationWithServicesDto
 {
-    private OpenReferralOrganisationWithServicesDto()
-    {
-
-    }
+    public OpenReferralOrganisationWithServicesDto() { }
     public OpenReferralOrganisationWithServicesDto(
         string id,
         string? name,

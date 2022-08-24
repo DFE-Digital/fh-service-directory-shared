@@ -1,6 +1,6 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralPhysicalAddress;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhysicalAddresses;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralLocation;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLocations;
 
 public interface IOpenReferralLocationDto
 {
@@ -9,10 +9,5 @@ public interface IOpenReferralLocationDto
     double Latitude { get; init; }
     double Longitude { get; init; }
     string Name { get; init; }
-    ICollection<OpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralLocationDto? other);
-    int GetHashCode();
-    string ToString();
+    ICollection<IOpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
 }

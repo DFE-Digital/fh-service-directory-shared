@@ -1,12 +1,16 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralPhone;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhones;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralContact;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 
 public record OpenReferralContactDto : IOpenReferralContactDto
 {
-    private OpenReferralContactDto() { }
-    public OpenReferralContactDto(string id, string title, string name,
-        ICollection<IOpenReferralPhoneDto>? phones)
+    public OpenReferralContactDto() { }
+    public OpenReferralContactDto(
+        string id,
+        string title,
+        string name,
+        ICollection<IOpenReferralPhoneDto>? phones
+    )
     {
         Id = id;
         Title = title;

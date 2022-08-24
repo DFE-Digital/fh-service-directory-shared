@@ -1,6 +1,6 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralPhone;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhones;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralContact;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 
 public interface IOpenReferralContactDto
 {
@@ -8,9 +8,4 @@ public interface IOpenReferralContactDto
     string Name { get; init; }
     ICollection<IOpenReferralPhoneDto>? Phones { get; init; }
     string Title { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralContactDto? other);
-    int GetHashCode();
-    string ToString();
 }

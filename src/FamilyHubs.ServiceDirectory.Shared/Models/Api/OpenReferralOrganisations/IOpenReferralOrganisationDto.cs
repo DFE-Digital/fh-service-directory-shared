@@ -1,4 +1,4 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.OpenReferralOrganisation;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 
 public interface IOpenReferralOrganisationDto
 {
@@ -8,9 +8,4 @@ public interface IOpenReferralOrganisationDto
     string? Name { get; init; }
     string? Uri { get; init; }
     string? Url { get; init; }
-
-    bool Equals(object? obj);
-    bool Equals(OpenReferralOrganisationDto? other);
-    int GetHashCode();
-    string ToString();
 }
