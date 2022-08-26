@@ -4,11 +4,11 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisation
 
 public interface IOpenReferralOrganisationWithServicesDto
 {
-    string? Description { get; init; }
-    string Id { get; init; }
-    string? Logo { get; init; }
-    string? Name { get; init; }
+    string? Description { get; set; }
+    string Id { get; set; }
+    string? Logo { get; set; }
+    string? Name { get; set; }
     ICollection<OpenReferralServiceDto>? Services { get; set; }
-    string? Uri { get; init; }
-    string? Url { get; init; }
+    string? Uri { get; set; }
+    string? Url { get; set; }
 }
