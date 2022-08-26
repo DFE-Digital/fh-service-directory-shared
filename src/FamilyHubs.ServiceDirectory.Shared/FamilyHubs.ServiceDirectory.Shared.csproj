@@ -8,8 +8,4 @@
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FamilyHubs.SharedKernel" Version="1.0.3" />
-  </ItemGroup>
-
 </Project>
