@@ -8,7 +8,7 @@ public interface IOpenReferralOrganisationWithServicesDto
     string Id { get; init; }
     string? Logo { get; init; }
     string? Name { get; init; }
-    ICollection<IOpenReferralServiceDto>? Services { get; set; }
+    ICollection<OpenReferralServiceDto>? Services { get; set; }
     string? Uri { get; init; }
     string? Url { get; init; }
 }

@@ -7,7 +7,7 @@ public record OpenReferralServiceAtLocationDto : IOpenReferralServiceAtLocationD
     public OpenReferralServiceAtLocationDto() { }
     public OpenReferralServiceAtLocationDto(
         string id,
-        IOpenReferralLocationDto location
+        OpenReferralLocationDto location
         //ICollection<OpenReferralHoliday_Schedule>? holidayScheduleCollection, ICollection<OpenReferralRegular_Schedule>? regular_schedule
         )
     {
@@ -18,7 +18,7 @@ public record OpenReferralServiceAtLocationDto : IOpenReferralServiceAtLocationD
     }
 
     public string Id { get; set; } = default!;
-    public IOpenReferralLocationDto Location { get; init; } = default!;
+    public OpenReferralLocationDto Location { get; init; } = default!;
     //public ICollection<OpenReferralHoliday_Schedule>? HolidayScheduleCollection { get; init; }
     //public ICollection<OpenReferralRegular_Schedule>? Regular_schedule { get; init; }
 }

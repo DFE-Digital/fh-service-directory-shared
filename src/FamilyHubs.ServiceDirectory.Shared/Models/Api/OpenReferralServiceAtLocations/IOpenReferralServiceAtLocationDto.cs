@@ -5,5 +5,5 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLoc
 public interface IOpenReferralServiceAtLocationDto
 {
     string Id { get; set; }
-    IOpenReferralLocationDto Location { get; init; }
+    OpenReferralLocationDto Location { get; init; }
 }

@@ -25,14 +25,14 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         string? url,
         string? email,
         string? fees,
-        ICollection<IOpenReferralServiceDeliveryExDto>? serviceDelivery,
-        ICollection<IOpenReferralEligibilityDto>? eligibilities,
-        ICollection<IOpenReferralContactDto>? contacts,
-        ICollection<IOpenReferralCostOptionDto> cost_options,
-        ICollection<IOpenReferralLanguageDto>? languages,
-        ICollection<IOpenReferralServiceAreaDto>? service_areas,
-        ICollection<IOpenReferralServiceAtLocationDto>? service_at_locations,
-        ICollection<IOpenReferralServiceTaxonomyDto>? service_taxonomys
+        ICollection<OpenReferralServiceDeliveryExDto>? serviceDelivery,
+        ICollection<OpenReferralEligibilityDto>? eligibilities,
+        ICollection<OpenReferralContactDto>? contacts,
+        ICollection<OpenReferralCostOptionDto> cost_options,
+        ICollection<OpenReferralLanguageDto>? languages,
+        ICollection<OpenReferralServiceAreaDto>? service_areas,
+        ICollection<OpenReferralServiceAtLocationDto>? service_at_locations,
+        ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys
     )
     {
         Id = id;
@@ -69,12 +69,12 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public string? Url { get; init; }
     public string? Email { get; init; }
     public string? Fees { get; init; }
-    public ICollection<IOpenReferralServiceDeliveryExDto>? ServiceDelivery { get; init; }
-    public ICollection<IOpenReferralEligibilityDto>? Eligibilities { get; init; }
-    public ICollection<IOpenReferralContactDto>? Contacts { get; init; }
-    public ICollection<IOpenReferralCostOptionDto>? Cost_options { get; init; }
-    public ICollection<IOpenReferralLanguageDto>? Languages { get; init; }
-    public ICollection<IOpenReferralServiceAreaDto>? Service_areas { get; init; }
-    public ICollection<IOpenReferralServiceAtLocationDto>? Service_at_locations { get; init; }
-    public ICollection<IOpenReferralServiceTaxonomyDto>? Service_taxonomys { get; init; }
+    public ICollection<OpenReferralServiceDeliveryExDto>? ServiceDelivery { get; init; }
+    public ICollection<OpenReferralEligibilityDto>? Eligibilities { get; init; }
+    public ICollection<OpenReferralContactDto>? Contacts { get; init; }
+    public ICollection<OpenReferralCostOptionDto>? Cost_options { get; init; }
+    public ICollection<OpenReferralLanguageDto>? Languages { get; init; }
+    public ICollection<OpenReferralServiceAreaDto>? Service_areas { get; init; }
+    public ICollection<OpenReferralServiceAtLocationDto>? Service_at_locations { get; init; }
+    public ICollection<OpenReferralServiceTaxonomyDto>? Service_taxonomys { get; init; }
 }

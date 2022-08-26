@@ -9,7 +9,7 @@ public record OpenReferralContactDto : IOpenReferralContactDto
         string id,
         string title,
         string name,
-        ICollection<IOpenReferralPhoneDto>? phones
+        ICollection<OpenReferralPhoneDto>? phones
     )
     {
         Id = id;
@@ -20,5 +20,5 @@ public record OpenReferralContactDto : IOpenReferralContactDto
     public string Id { get; set; } = default!;
     public string Title { get; init; } = default!;
     public string Name { get; init; } = default!;
-    public virtual ICollection<IOpenReferralPhoneDto>? Phones { get; init; }
+    public virtual ICollection<OpenReferralPhoneDto>? Phones { get; init; }
 }

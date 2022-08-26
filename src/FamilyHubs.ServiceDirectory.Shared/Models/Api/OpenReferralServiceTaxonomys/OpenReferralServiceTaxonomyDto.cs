@@ -5,11 +5,11 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxon
 public record OpenReferralServiceTaxonomyDto : IOpenReferralServiceTaxonomyDto
 {
     public OpenReferralServiceTaxonomyDto() { }
-    public OpenReferralServiceTaxonomyDto(string id, IOpenReferralTaxonomyDto? taxonomy)
+    public OpenReferralServiceTaxonomyDto(string id, OpenReferralTaxonomyDto? taxonomy)
     {
         Id = id;
         Taxonomy = taxonomy;
     }
     public string Id { get; set; } = default!;
-    public IOpenReferralTaxonomyDto? Taxonomy { get; init; }
+    public OpenReferralTaxonomyDto? Taxonomy { get; init; }
 }

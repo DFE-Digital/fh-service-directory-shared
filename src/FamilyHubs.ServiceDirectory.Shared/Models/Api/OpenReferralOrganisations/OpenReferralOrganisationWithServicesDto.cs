@@ -12,7 +12,7 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
         string? logo,
         string? uri,
         string? url,
-        ICollection<IOpenReferralServiceDto>? services)
+        ICollection<OpenReferralServiceDto>? services)
     {
         Id = id;
         Name = name;
@@ -30,7 +30,7 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
     public string? Uri { get; init; }
     public string? Url { get; init; }
 
-    public virtual ICollection<IOpenReferralServiceDto>? Services { get; set; } = default!;
+    public virtual ICollection<OpenReferralServiceDto>? Services { get; set; } = default!;
 
 }
 

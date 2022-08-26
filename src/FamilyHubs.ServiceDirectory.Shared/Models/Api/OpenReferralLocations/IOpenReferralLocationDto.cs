@@ -9,5 +9,5 @@ public interface IOpenReferralLocationDto
     double Latitude { get; init; }
     double Longitude { get; init; }
     string Name { get; init; }
-    ICollection<IOpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
+    ICollection<OpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
 }

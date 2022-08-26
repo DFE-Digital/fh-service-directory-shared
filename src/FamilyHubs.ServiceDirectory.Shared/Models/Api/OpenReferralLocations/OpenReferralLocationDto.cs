@@ -11,7 +11,7 @@ public record OpenReferralLocationDto : IOpenReferralLocationDto
         string? description,
         double latitude,
         double longitude,
-        ICollection<IOpenReferralPhysicalAddressDto>? physical_addresses
+        ICollection<OpenReferralPhysicalAddressDto>? physical_addresses
     // ICollection<Accessibility_For_Disabilities>? accessibility_for_disabilities
     //, ICollection<OpenReferralServiceAtLocation>? service_at_locations
     )
@@ -31,7 +31,7 @@ public record OpenReferralLocationDto : IOpenReferralLocationDto
     public string? Description { get; init; }
     public double Latitude { get; init; }
     public double Longitude { get; init; }
-    public ICollection<IOpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
+    public ICollection<OpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
     //public ICollection<Accessibility_For_Disabilities>? Accessibility_for_disabilities { get; init; }
     //public ICollection<OpenReferralServiceAtLocation>? Service_at_locations { get; init; }
 }
