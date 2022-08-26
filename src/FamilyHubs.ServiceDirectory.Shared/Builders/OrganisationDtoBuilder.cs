@@ -1,11 +1,10 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class OrganisationDtoBuilder
 {
-    private IOpenReferralOrganisationWithServicesDto _openReferralOrganisation;
+    private OpenReferralOrganisationWithServicesDto _openReferralOrganisation;
 
     public OrganisationDtoBuilder()
     {
@@ -23,13 +22,13 @@ public class OrganisationDtoBuilder
         return this;
     }
 
-    public OrganisationDtoBuilder WithServices(ICollection<IOpenReferralServiceDto>? Services)
+    public OrganisationDtoBuilder WithServices(ICollection<OpenReferralServiceDto>? Services)
     {
         _openReferralOrganisation.Services = Services;
         return this;
     }
 
-    public IOpenReferralOrganisationWithServicesDto Build()
+    public OpenReferralOrganisationWithServicesDto Build()
     {
         return _openReferralOrganisation;
     }

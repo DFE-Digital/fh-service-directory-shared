@@ -1,18 +1,10 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class ServicesDtoBuilder
 {
-    private IOpenReferralServiceDto _openReferralServiceDto;
+    private OpenReferralServiceDto _openReferralServiceDto;
 
     public ServicesDtoBuilder()
     {
@@ -36,55 +28,55 @@ public class ServicesDtoBuilder
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceDelivery(ICollection<IOpenReferralServiceDeliveryExDto>? serviceDelivery)
+    public ServicesDtoBuilder WithServiceDelivery(ICollection<OpenReferralServiceDeliveryExDto>? serviceDelivery)
     {
         _openReferralServiceDto.ServiceDelivery = serviceDelivery;
         return this;
     }
 
-    public ServicesDtoBuilder WithEligibility(ICollection<IOpenReferralEligibilityDto>? eligibilities)
+    public ServicesDtoBuilder WithEligibility(ICollection<OpenReferralEligibilityDto>? eligibilities)
     {
         _openReferralServiceDto.Eligibilities = eligibilities;
         return this;
     }
 
-    public ServicesDtoBuilder WithContact(ICollection<IOpenReferralContactDto>? contacts)
+    public ServicesDtoBuilder WithContact(ICollection<OpenReferralContactDto>? contacts)
     {
         _openReferralServiceDto.Contacts = contacts;
         return this;
     }
 
-    public ServicesDtoBuilder WithCostOption(ICollection<IOpenReferralCostOptionDto> cost_options)
+    public ServicesDtoBuilder WithCostOption(ICollection<OpenReferralCostOptionDto> cost_options)
     {
         _openReferralServiceDto.Cost_options = cost_options;
         return this;
     }
 
-    public ServicesDtoBuilder WithLanguages(ICollection<IOpenReferralLanguageDto>? languages)
+    public ServicesDtoBuilder WithLanguages(ICollection<OpenReferralLanguageDto>? languages)
     {
         _openReferralServiceDto.Languages = languages;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceAreas(ICollection<IOpenReferralServiceAreaDto>? service_areas)
+    public ServicesDtoBuilder WithServiceAreas(ICollection<OpenReferralServiceAreaDto>? service_areas)
     {
         _openReferralServiceDto.Service_areas = service_areas;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceAtLocations(ICollection<IOpenReferralServiceAtLocationDto>? service_at_locations)
+    public ServicesDtoBuilder WithServiceAtLocations(ICollection<OpenReferralServiceAtLocationDto>? service_at_locations)
     {
         _openReferralServiceDto.Service_at_locations = service_at_locations;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceTaxonomies(ICollection<IOpenReferralServiceTaxonomyDto>? service_taxonomys)
+    public ServicesDtoBuilder WithServiceTaxonomies(ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys)
     {
         _openReferralServiceDto.Service_taxonomys = service_taxonomys;
         return this;
     }
 
-    public IOpenReferralServiceDto Build()
+    public OpenReferralServiceDto Build()
     {
         return _openReferralServiceDto;
     }

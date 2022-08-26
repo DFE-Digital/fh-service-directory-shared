@@ -1,8 +1,6 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
-
-public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisationWithServicesDto
+public class OpenReferralOrganisationWithServicesDto
 {
     public OpenReferralOrganisationWithServicesDto() { }
     public OpenReferralOrganisationWithServicesDto(
@@ -12,7 +10,7 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
         string? logo,
         string? uri,
         string? url,
-        ICollection<IOpenReferralServiceDto>? services)
+        ICollection<OpenReferralServiceDto>? services)
     {
         Id = id;
         Name = name;
@@ -30,7 +28,7 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
     public string? Uri { get; set; }
     public string? Url { get; set; }
 
-    public virtual ICollection<IOpenReferralServiceDto>? Services { get; set; } = default!;
+    public virtual ICollection<OpenReferralServiceDto>? Services { get; set; } = default!;
 
 }
 

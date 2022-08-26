@@ -1,6 +1,6 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhones;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
-public class OpenReferralPhoneDto : IOpenReferralPhoneDto
+public class OpenReferralPhoneDto
 {
     public OpenReferralPhoneDto() { }
     public OpenReferralPhoneDto(string id, string number)

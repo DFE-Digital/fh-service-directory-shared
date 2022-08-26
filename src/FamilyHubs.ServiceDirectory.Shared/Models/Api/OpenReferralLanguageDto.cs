@@ -1,6 +1,6 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
-public record OpenReferralLanguageDto : IOpenReferralLanguageDto
+public record OpenReferralLanguageDto
 {
     public OpenReferralLanguageDto() { }
     public OpenReferralLanguageDto(string id, string language)

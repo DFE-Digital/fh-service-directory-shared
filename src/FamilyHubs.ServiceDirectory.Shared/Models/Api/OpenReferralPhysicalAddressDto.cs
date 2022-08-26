@@ -1,6 +1,6 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhysicalAddresses;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
-public class OpenReferralPhysicalAddressDto : IOpenReferralPhysicalAddressDto
+public class OpenReferralPhysicalAddressDto
 {
     public OpenReferralPhysicalAddressDto() { }
     public OpenReferralPhysicalAddressDto(

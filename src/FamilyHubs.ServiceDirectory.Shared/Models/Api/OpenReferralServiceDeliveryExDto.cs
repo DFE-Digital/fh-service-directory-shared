@@ -1,9 +1,8 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Enums;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api;
 
-public record OpenReferralServiceDeliveryExDto : IOpenReferralServiceDeliveryExDto
-
+public record OpenReferralServiceDeliveryExDto
 {
     public OpenReferralServiceDeliveryExDto() { }
     public OpenReferralServiceDeliveryExDto(string id, ServiceDelivery serviceDelivery)
