@@ -8,9 +8,9 @@ public record OpenReferralServiceDeliveryExDto
     public OpenReferralServiceDeliveryExDto(string id, ServiceDelivery serviceDelivery)
     {
         Id = id;
-        ServiceDelivery = serviceDelivery;
+        ServiceDeliveryEx = serviceDelivery;
     }
 
     public string Id { get; init; } = default!;
-    public ServiceDelivery ServiceDelivery { get; init; }
+    public ServiceDelivery ServiceDeliveryEx { get; init; }
 }
