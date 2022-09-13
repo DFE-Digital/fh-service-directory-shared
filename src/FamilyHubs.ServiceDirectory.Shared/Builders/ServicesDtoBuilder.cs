@@ -19,9 +19,10 @@ public class ServicesDtoBuilder
         _openReferralServiceDto = new OpenReferralServiceDto();
     }
 
-    public ServicesDtoBuilder WithMainProperties(string id, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees)
+    public ServicesDtoBuilder WithMainProperties(string id, string parentId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees)
     {
         _openReferralServiceDto.Id = id;
+        _openReferralServiceDto.OpenReferralOrganisationId = parentId;
         _openReferralServiceDto.Name = name;
         _openReferralServiceDto.Description = description;
         _openReferralServiceDto.Accreditations = accreditations;
