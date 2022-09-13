@@ -23,6 +23,7 @@ public interface IOpenReferralServiceDto
     string? Email { get; set; }
     string? Fees { get; set; }
     string Id { get; set; }
+    public string OpenReferralOrganisationId { get; set; }
     ICollection<OpenReferralLanguageDto>? Languages { get; set; }
     string Name { get; set; }
     ICollection<OpenReferralServiceAreaDto>? Service_areas { get; set; }
