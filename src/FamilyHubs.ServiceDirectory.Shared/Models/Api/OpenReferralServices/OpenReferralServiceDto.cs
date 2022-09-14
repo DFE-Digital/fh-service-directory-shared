@@ -14,6 +14,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public OpenReferralServiceDto() { }
     public OpenReferralServiceDto(
         string id,
+        string parentId,
         string name,
         string? description,
         string? accreditations,
@@ -36,6 +37,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     )
     {
         Id = id;
+        OpenReferralOrganisationId = parentId;
         Name = name;
         Description = description;
         Accreditations = accreditations;
@@ -58,6 +60,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     }
 
     public string Id { get; set; } = default!;
+    public string OpenReferralOrganisationId { get; set; } = default!;
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string? Accreditations { get; set; }
