@@ -4,12 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <VersionPrefix>1.0.9</VersionPrefix>
+	  <VersionPrefix>1.0.10</VersionPrefix>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FamilyHubs.SharedKernel" Version="1.0.4" />
-  </ItemGroup>
 
 </Project>
