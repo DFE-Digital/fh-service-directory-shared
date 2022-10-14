@@ -1,10 +1,13 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
+
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 
 public record OpenReferralOrganisationExDto : OpenReferralOrganisationDto
 {
     private OpenReferralOrganisationExDto() { }
     public OpenReferralOrganisationExDto(string id = default!,
-        string organisationTypeId = default!,
+        OrganisationTypeDto organisationType = default!,
+        string adminDistrict = default!,
         string name = default!,
         string? description = default!,
         string? logo = default!,
@@ -13,16 +16,14 @@ public record OpenReferralOrganisationExDto : OpenReferralOrganisationDto
         string? email = default!,
         string? contactName = default!,
         string? contactPhone = default!)
-        : base(id, name, description, logo, uri, url)
+        : base(id, organisationType, adminDistrict,  name, description, logo, uri, url)
     {
         Email = email;
         ContactName = contactName;
         ContactPhone = contactPhone;
-        OrganisationTypeId = organisationTypeId;
     }
 
     public string? Email { get; set; } = default!;
     public string? ContactName { get; set; } = default!;
     public string? ContactPhone { get; set; } = default!;
-    public string OrganisationTypeId { get; set; } = default!;
 }
