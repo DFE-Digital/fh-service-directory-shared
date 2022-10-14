@@ -7,6 +7,7 @@ using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocatio
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.ServiceType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
@@ -19,9 +20,10 @@ public class ServicesDtoBuilder
         _openReferralServiceDto = new OpenReferralServiceDto();
     }
 
-    public ServicesDtoBuilder WithMainProperties(string id, string organisationId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees)
+    public ServicesDtoBuilder WithMainProperties(string id, ServiceTypeDto serviceType, string organisationId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees)
     {
         _openReferralServiceDto.Id = id;
+        _openReferralServiceDto.ServiceType = serviceType;
         _openReferralServiceDto.OpenReferralOrganisationId = organisationId;
         _openReferralServiceDto.Name = name;
         _openReferralServiceDto.Description = description;

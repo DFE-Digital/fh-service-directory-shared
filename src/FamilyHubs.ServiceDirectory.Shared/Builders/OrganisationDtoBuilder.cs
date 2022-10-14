@@ -1,5 +1,6 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
@@ -12,9 +13,11 @@ public class OrganisationDtoBuilder
         _openReferralOrganisation = new OpenReferralOrganisationWithServicesDto();
     }
 
-    public OrganisationDtoBuilder WithMainProperties(string id, string? name, string? description, string? logo, string? uri, string? url)
+    public OrganisationDtoBuilder WithMainProperties(string id, OrganisationTypeDto organisationType, string adminDistrict, string? name, string? description, string? logo, string? uri, string? url)
     {
         _openReferralOrganisation.Id = id;
+        _openReferralOrganisation.OrganisationType = organisationType;
+        _openReferralOrganisation.AdminDistrict = adminDistrict;
         _openReferralOrganisation.Name = name;
         _openReferralOrganisation.Description = description;
         _openReferralOrganisation.Logo = logo;

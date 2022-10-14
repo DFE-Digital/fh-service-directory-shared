@@ -1,4 +1,5 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 
@@ -11,4 +12,6 @@ public interface IOpenReferralOrganisationWithServicesDto
     ICollection<OpenReferralServiceDto>? Services { get; set; }
     string? Uri { get; set; }
     string? Url { get; set; }
+    string AdminDistrict { get; set; }
+    OrganisationTypeDto OrganisationType { get; set; }
 }

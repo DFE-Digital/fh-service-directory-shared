@@ -6,6 +6,7 @@ using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.ServiceType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 
@@ -14,7 +15,8 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public OpenReferralServiceDto() { }
     public OpenReferralServiceDto(
         string id,
-        string parentId,
+        ServiceTypeDto serviceType,
+        string organisationId,
         string name,
         string? description,
         string? accreditations,
@@ -37,7 +39,8 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     )
     {
         Id = id;
-        OpenReferralOrganisationId = parentId;
+        ServiceType = serviceType;
+        OpenReferralOrganisationId = organisationId;
         Name = name;
         Description = description;
         Accreditations = accreditations;
@@ -60,6 +63,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     }
 
     public string Id { get; set; } = default!;
+    public ServiceTypeDto ServiceType { get; set; } = default!;
     public string OpenReferralOrganisationId { get; set; } = default!;
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
