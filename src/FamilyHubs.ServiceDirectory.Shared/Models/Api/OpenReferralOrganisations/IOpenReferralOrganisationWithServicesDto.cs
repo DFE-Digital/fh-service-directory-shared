@@ -12,6 +12,6 @@ public interface IOpenReferralOrganisationWithServicesDto
     ICollection<OpenReferralServiceDto>? Services { get; set; }
     string? Uri { get; set; }
     string? Url { get; set; }
-    string AdminDistrict { get; set; }
+    public string? AdministractiveDistrictCode { get; set; }
     OrganisationTypeDto OrganisationType { get; set; }
 }

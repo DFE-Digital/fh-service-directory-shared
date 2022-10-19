@@ -7,7 +7,6 @@ public record OpenReferralOrganisationExDto : OpenReferralOrganisationDto
     private OpenReferralOrganisationExDto() { }
     public OpenReferralOrganisationExDto(string id = default!,
         OrganisationTypeDto organisationType = default!,
-        string adminDistrict = default!,
         string name = default!,
         string? description = default!,
         string? logo = default!,
@@ -16,7 +15,7 @@ public record OpenReferralOrganisationExDto : OpenReferralOrganisationDto
         string? email = default!,
         string? contactName = default!,
         string? contactPhone = default!)
-        : base(id, organisationType, adminDistrict,  name, description, logo, uri, url)
+        : base(id, organisationType, name, description, logo, uri, url)
     {
         Email = email;
         ContactName = contactName;

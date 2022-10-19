@@ -13,16 +13,25 @@ public class OrganisationDtoBuilder
         _openReferralOrganisation = new OpenReferralOrganisationWithServicesDto();
     }
 
-    public OrganisationDtoBuilder WithMainProperties(string id, OrganisationTypeDto organisationType, string adminDistrict, string? name, string? description, string? logo, string? uri, string? url)
+    public OrganisationDtoBuilder WithMainProperties(string id, OrganisationTypeDto organisationType, string? name, string? description, string? logo, string? uri, string? url)
     {
         _openReferralOrganisation.Id = id;
         _openReferralOrganisation.OrganisationType = organisationType;
-        _openReferralOrganisation.AdminDistrict = adminDistrict;
         _openReferralOrganisation.Name = name;
         _openReferralOrganisation.Description = description;
         _openReferralOrganisation.Logo = logo;
         _openReferralOrganisation.Uri = uri;
         _openReferralOrganisation.Url = url;
+        if (url != null && uri == null)
+        {
+            _openReferralOrganisation.Uri = new Uri(url).ToString();
+        }
+        return this;
+    }
+
+    public OrganisationDtoBuilder WithAdministractiveDistrictCode(string code)
+    {
+        _openReferralOrganisation.AdministractiveDistrictCode = code;
         return this;
     }
 

@@ -10,6 +10,5 @@ public interface IOpenReferralOrganisationDto
     string? Name { get; init; }
     string? Uri { get; init; }
     string? Url { get; init; }
-    string AdminDistrict { get; set; }
     OrganisationTypeDto OrganisationType { get; set; }
 }
