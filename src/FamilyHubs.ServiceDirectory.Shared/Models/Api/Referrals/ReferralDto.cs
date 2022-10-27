@@ -18,6 +18,7 @@ public class ReferralDto
         HasSpecialNeeds = hasSpecialNeeds;
         Email = email;
         Phone = phone;
+        Text = text;
         ReasonForSupport = reasonForSupport;
         Status = status;
     }
@@ -38,7 +39,7 @@ public class ReferralDto
     public string? Phone { get; set; } = default!;
     [Phone]
     [MaxLength(50)]
-    public string Text { get; set; } = default!;
+    public string? Text { get; set; } = default!;
     [MaxLength(1000)]
     public string ReasonForSupport { get; set; } = default!;
     public virtual ICollection<ReferralStatusDto> Status { get; set; } = default!;
