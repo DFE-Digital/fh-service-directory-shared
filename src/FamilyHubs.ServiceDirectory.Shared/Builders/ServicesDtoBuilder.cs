@@ -20,7 +20,7 @@ public class ServicesDtoBuilder
         _openReferralServiceDto = new OpenReferralServiceDto();
     }
 
-    public ServicesDtoBuilder WithMainProperties(string id, ServiceTypeDto serviceType, string organisationId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees)
+    public ServicesDtoBuilder WithMainProperties(string id, ServiceTypeDto serviceType, string organisationId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees, bool canFamilyChooseDeliveryLocation)
     {
         _openReferralServiceDto.Id = id;
         _openReferralServiceDto.ServiceType = serviceType;
@@ -36,6 +36,7 @@ public class ServicesDtoBuilder
         _openReferralServiceDto.Url = url;
         _openReferralServiceDto.Email = email;
         _openReferralServiceDto.Fees = fees;
+        _openReferralServiceDto.CanFamilyChooseDeliveryLocation = canFamilyChooseDeliveryLocation;
         return this;
     }
 
