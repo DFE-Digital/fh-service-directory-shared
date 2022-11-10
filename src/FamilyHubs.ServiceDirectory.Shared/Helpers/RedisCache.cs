@@ -6,6 +6,8 @@ namespace FamilyHubs.ServiceDirectory.Shared.Helpers;
 
 public interface IRedisCache
 {
+    string? GetStringValue(string key);
+    void SetStringValue(string key, string value);
     T? GetValue<T>(string key);
     void SetValue<T>(string key, T value);
 }
