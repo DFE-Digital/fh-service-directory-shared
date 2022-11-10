@@ -28,6 +28,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         string? url,
         string? email,
         string? fees,
+        bool canFamilyChooseDeliveryLocation,
         ICollection<OpenReferralServiceDeliveryExDto>? serviceDelivery,
         ICollection<OpenReferralEligibilityDto>? eligibilities,
         ICollection<OpenReferralContactDto>? contacts,
@@ -52,6 +53,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         Url = url;
         Email = email;
         Fees = fees;
+        CanFamilyChooseDeliveryLocation = canFamilyChooseDeliveryLocation;
         ServiceDelivery = serviceDelivery;
         Eligibilities = eligibilities;
         Contacts = contacts;
@@ -76,6 +78,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public string? Url { get; set; }
     public string? Email { get; set; }
     public string? Fees { get; set; }
+    public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<OpenReferralServiceDeliveryExDto>? ServiceDelivery { get; set; }
     public ICollection<OpenReferralEligibilityDto>? Eligibilities { get; set; }
     public ICollection<OpenReferralContactDto>? Contacts { get; set; }
