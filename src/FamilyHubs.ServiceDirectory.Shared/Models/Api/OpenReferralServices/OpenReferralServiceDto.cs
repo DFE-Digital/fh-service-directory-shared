@@ -78,6 +78,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public string? Url { get; set; }
     public string? Email { get; set; }
     public string? Fees { get; set; }
+    public double? Distance { get; set; } = default(double?);
     public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<OpenReferralServiceDeliveryExDto>? ServiceDelivery { get; set; }
     public ICollection<OpenReferralEligibilityDto>? Eligibilities { get; set; }
