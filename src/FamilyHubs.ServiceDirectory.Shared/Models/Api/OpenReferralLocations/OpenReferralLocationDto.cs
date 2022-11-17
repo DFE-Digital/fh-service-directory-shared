@@ -31,6 +31,7 @@ public record OpenReferralLocationDto : IOpenReferralLocationDto
     public string? Description { get; init; }
     public double Latitude { get; init; }
     public double Longitude { get; init; }
+    public double? Distance { get; set; } = default(double?);
     public ICollection<OpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
     //public ICollection<Accessibility_For_Disabilities>? Accessibility_for_disabilities { get; init; }
     //public ICollection<OpenReferralServiceAtLocation>? Service_at_locations { get; init; }
