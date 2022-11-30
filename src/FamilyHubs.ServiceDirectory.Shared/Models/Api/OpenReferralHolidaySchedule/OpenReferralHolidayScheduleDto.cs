@@ -3,7 +3,7 @@
 public record OpenReferralHolidayScheduleDto : IOpenReferralHolidayScheduleDto
 {
     private OpenReferralHolidayScheduleDto() { }
-    public OpenReferralHolidayScheduleDto(string id, bool closed, DateTime? closes_at, DateTime? start_date, DateTime? end_date, DateTime? opens_at)
+    public OpenReferralHolidayScheduleDto(string id, bool closed, TimeSpan? closes_at, DateTime? start_date, DateTime? end_date, TimeSpan? opens_at)
     {
         Id = id;
         Closed = closed;
@@ -14,8 +14,8 @@ public record OpenReferralHolidayScheduleDto : IOpenReferralHolidayScheduleDto
     }
     public string Id { get; init; } = default!;
     public bool Closed { get; set; }
-    public DateTime? Closes_at { get; set; }
+    public TimeSpan? Closes_at { get; set; }
     public DateTime? Start_date { get; set; }
     public DateTime? End_date { get; set; }
-    public DateTime? Opens_at { get; set; }
+    public TimeSpan? Opens_at { get; set; }
 }

@@ -3,7 +3,7 @@
 public record OpenReferralRegularScheduleDto : IOpenReferralRegularScheduleDto
 {
     private OpenReferralRegularScheduleDto() { }
-    public OpenReferralRegularScheduleDto(string id, string description, DateTime? opens_at, DateTime? closes_at, string? byday, string? bymonthday, string? dtstart, string? freq, string? interval, DateTime? valid_from, DateTime? valid_to)
+    public OpenReferralRegularScheduleDto(string id, string description, TimeSpan? opens_at, TimeSpan? closes_at, string? byday, string? bymonthday, string? dtstart, string? freq, string? interval, DateTime? valid_from, DateTime? valid_to)
     {
         Id = id;
         Description = description;
@@ -20,8 +20,8 @@ public record OpenReferralRegularScheduleDto : IOpenReferralRegularScheduleDto
 
     public string Id { get; init; } = default!;
     public string Description { get; init; } = default!;
-    public DateTime? Opens_at { get; init; }
-    public DateTime? Closes_at { get; init; }
+    public TimeSpan? Opens_at { get; init; }
+    public TimeSpan? Closes_at { get; init; }
     public string? Byday { get; init; }
     public string? Bymonthday { get; init; }
     public string? Dtstart { get; init; }
