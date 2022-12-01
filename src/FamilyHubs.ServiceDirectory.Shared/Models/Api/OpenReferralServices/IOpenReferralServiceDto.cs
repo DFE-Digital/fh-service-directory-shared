@@ -1,7 +1,9 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralHolidaySchedule;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralRegularSchedule;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
@@ -32,4 +34,6 @@ public interface IOpenReferralServiceDto
     ICollection<OpenReferralServiceDeliveryExDto>? ServiceDelivery { get; set; }
     string? Status { get; set; }
     string? Url { get; set; }
+    ICollection<OpenReferralRegularScheduleDto>? RegularSchedules { get; set; }
+    ICollection<OpenReferralHolidayScheduleDto>? HolidaySchedules { get; set; }
 }
