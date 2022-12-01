@@ -4,8 +4,8 @@ internal interface IOpenReferralRegularScheduleDto
 {
     string Id { get; init; }
     string Description { get; init; }
-    TimeSpan? Opens_at { get; init; }
-    TimeSpan? Closes_at { get; init; }
+    DateTime? Opens_at { get; init; }
+    DateTime? Closes_at { get; init; }
     string? Byday { get; init; }
     string? Bymonthday { get; init; }
     string? Dtstart { get; init; }

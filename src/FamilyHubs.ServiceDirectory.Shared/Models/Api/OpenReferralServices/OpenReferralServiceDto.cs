@@ -1,7 +1,9 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralHolidaySchedule;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralRegularSchedule;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
@@ -36,7 +38,9 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         ICollection<OpenReferralLanguageDto>? languages,
         ICollection<OpenReferralServiceAreaDto>? service_areas,
         ICollection<OpenReferralServiceAtLocationDto>? service_at_locations,
-        ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys
+        ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys,
+        ICollection<OpenReferralRegularScheduleDto>? regular_schedules,
+        ICollection<OpenReferralHolidayScheduleDto>? holiday_schedules
     )
     {
         Id = id;
@@ -62,6 +66,8 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         Service_areas = service_areas;
         Service_at_locations = service_at_locations;
         Service_taxonomys = service_taxonomys;
+        RegularSchedules = regular_schedules;
+        HolidaySchedules = holiday_schedules;
     }
 
     public string Id { get; set; } = default!;
@@ -88,4 +94,6 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public ICollection<OpenReferralServiceAreaDto>? Service_areas { get; set; }
     public ICollection<OpenReferralServiceAtLocationDto>? Service_at_locations { get; set; }
     public ICollection<OpenReferralServiceTaxonomyDto>? Service_taxonomys { get; set; }
+    public ICollection<OpenReferralRegularScheduleDto>? RegularSchedules { get; set; }
+    public ICollection<OpenReferralHolidayScheduleDto>? HolidaySchedules { get; set; }
 }
