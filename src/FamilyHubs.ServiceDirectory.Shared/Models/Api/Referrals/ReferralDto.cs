@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.Referrals;
 public class ReferralDto
 {
     private ReferralDto() { }
-    public ReferralDto(string id, string organisationId, string serviceId, string serviceName, string serviceDescription, string serviceAsJson, string referrer, string fullName, string hasSpecialNeeds, string? email, string? phone, string? text, string reasonForSupport, ICollection<ReferralStatusDto> status)
+    public ReferralDto(string id, string organisationId, string serviceId, string serviceName, string serviceDescription, string serviceAsJson, string referrer, string fullName, string hasSpecialNeeds, string? email, string? phone, string? text, string reasonForSupport, string? reasonForRejection, ICollection<ReferralStatusDto> status)
     {
         Id = id;
         OrganisationId = organisationId;
@@ -20,6 +20,7 @@ public class ReferralDto
         Phone = phone;
         Text = text;
         ReasonForSupport = reasonForSupport;
+        ReasonForRejection = reasonForRejection;
         Status = status;
     }
 
@@ -42,5 +43,7 @@ public class ReferralDto
     public string? Text { get; set; } = default!;
     [MaxLength(1000)]
     public string ReasonForSupport { get; set; } = default!;
+    [MaxLength(1000)]
+    public string? ReasonForRejection { get; set; } = default!;
     public virtual ICollection<ReferralStatusDto> Status { get; set; } = default!;
 }
