@@ -1,4 +1,5 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhysicalAddresses;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLinkTaxonomies;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralPhysicalAddresses;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLocations;
 
@@ -10,4 +11,5 @@ public interface IOpenReferralLocationDto
     double Longitude { get; init; }
     string Name { get; init; }
     ICollection<OpenReferralPhysicalAddressDto>? Physical_addresses { get; init; }
+    ICollection<OpenReferralLinkTaxonomyDto>? LinkTaxonomies { get; set; }
 }
