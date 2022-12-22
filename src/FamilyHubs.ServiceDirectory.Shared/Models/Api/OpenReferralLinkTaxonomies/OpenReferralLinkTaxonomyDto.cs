@@ -4,16 +4,16 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLinkTaxonomi
 {
     public class OpenReferralLinkTaxonomyDto : IOpenReferralLinkTaxonomyDto
     {
-        public OpenReferralLinkTaxonomyDto(string id, string type, string linkId, OpenReferralTaxonomyDto taxonomy)
+        public OpenReferralLinkTaxonomyDto(string id, string linkType, string linkId, OpenReferralTaxonomyDto taxonomy)
         {
             Id = id;
-            Type = type;
+            LinkType = linkType;
             LinkId = linkId;
             Taxonomy = taxonomy;
         }
 
         public string Id { get; set; }
-        public string Type { get; init; }
+        public string LinkType { get; init; }
         public string LinkId { get; set; }
         public OpenReferralTaxonomyDto? Taxonomy { get; init; }
     }

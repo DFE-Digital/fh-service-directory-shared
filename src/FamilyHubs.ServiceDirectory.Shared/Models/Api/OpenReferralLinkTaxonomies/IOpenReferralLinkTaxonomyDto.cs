@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLinkTaxonomi
     public interface IOpenReferralLinkTaxonomyDto
     {
         string Id { get; set; }
-        string Type { get; init; }
+        string LinkType { get; init; }
         string LinkId { get; set; }
         OpenReferralTaxonomyDto? Taxonomy { get; init; }
     }
