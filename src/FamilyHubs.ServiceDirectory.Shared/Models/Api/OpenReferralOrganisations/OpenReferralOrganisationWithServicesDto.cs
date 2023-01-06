@@ -1,4 +1,5 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContactLinks;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
@@ -7,8 +8,7 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
 {
     public OpenReferralOrganisationWithServicesDto() { }
     public OpenReferralOrganisationWithServicesDto(
-        string id,
-        OrganisationTypeDto organisationType = default!,
+        string id, ICollection<OpenReferralContactLinkDto> contactLinks, OrganisationTypeDto organisationType = default!,
         string? name = default!,
         string? description = default!,
         string? logo = default!,
@@ -24,6 +24,7 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
         Uri = uri;
         Url = url;
         Services = services;
+        ContactLinks = contactLinks;
     }
 
     public OrganisationTypeDto OrganisationType { get; set; } = default!;
@@ -35,6 +36,6 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
     public string? Url { get; set; }
     public string? AdministractiveDistrictCode { get; set; }
     public virtual ICollection<OpenReferralServiceDto>? Services { get; set; } = default!;
-
+    public ICollection<OpenReferralContactLinkDto>? ContactLinks { get; set; }
 }
 

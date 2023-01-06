@@ -1,4 +1,5 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContactLinks;
+using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralHolidaySchedule;
@@ -17,7 +18,6 @@ public interface IOpenReferralServiceDto
     DateTime? Assured_date { get; set; }
     string? Attending_access { get; set; }
     string? Attending_type { get; set; }
-    ICollection<OpenReferralContactDto>? Contacts { get; set; }
     ICollection<OpenReferralCostOptionDto>? Cost_options { get; set; }
     string? Deliverable_type { get; set; }
     string? Description { get; set; }
@@ -36,4 +36,5 @@ public interface IOpenReferralServiceDto
     string? Url { get; set; }
     ICollection<OpenReferralRegularScheduleDto>? RegularSchedules { get; set; }
     ICollection<OpenReferralHolidayScheduleDto>? HolidaySchedules { get; set; }
+    ICollection<OpenReferralContactLinkDto>? ContactLinks { get; set; }
 }
