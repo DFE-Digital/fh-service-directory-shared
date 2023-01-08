@@ -1,11 +1,11 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 
-namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContactLinks;
+namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLinkContacts;
 
-public record OpenReferralContactLinkDto : IOpenReferralContactLinkDto
+public record OpenReferralLinkContactDto : IOpenReferralLinkContactDto
 {
-    public OpenReferralContactLinkDto() { }
-    public OpenReferralContactLinkDto(
+    public OpenReferralLinkContactDto() { }
+    public OpenReferralLinkContactDto(
         string id,
         string linkType,
         string linkId,

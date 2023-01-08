@@ -16,7 +16,6 @@ public interface IRedisCache
 
 public class RedisCache : IRedisCache
 {
-
     private readonly IConfiguration _configuration;
     private readonly IDatabase _cache;
 
@@ -45,7 +44,9 @@ public class RedisCache : IRedisCache
 
     public string? GetStringValue(string key)
     {
-       
+        // GG: Added the following pragma to stop the compiler complaining
+        //     We should probably 'log' the Redis exception before re-throwing it
+#pragma warning disable S2737 // "catch" clauses should do more than rethrow
         try
         {
             return _cache.StringGet(key);
@@ -54,6 +55,7 @@ public class RedisCache : IRedisCache
         {
             throw;
         }
+#pragma warning restore S2737 // "catch" clauses should do more than rethrow
     }
 
     public void SetValue<T>(string key, T value)
@@ -73,6 +75,9 @@ public class RedisCache : IRedisCache
 
     public T? GetValue<T>(string key)
     {
+        // GG: Added the following pragma to stop the compiler compiling
+        //     We should probably 'log' the Redis exception before re-throwing it
+#pragma warning disable S2737 // "catch" clauses should do more than rethrow
         try
         {
             if (key == null)
@@ -94,6 +99,6 @@ public class RedisCache : IRedisCache
         {
             throw;
         }
+#pragma warning restore S2737 // "catch" clauses should do more than rethrow
     }
-
 }

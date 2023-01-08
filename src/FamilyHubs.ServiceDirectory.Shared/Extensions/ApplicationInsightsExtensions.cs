@@ -28,7 +28,6 @@ public static class ApplicationInsightsExtensions
     {
         Guard.ArgumentNotNull(config, nameof(config));
 
-
         string appInsightsKey = config["APPINSIGHTS_INSTRUMENTATIONKEY"] ?? string.Empty;
         string appInsightsConnectionString = config["APPINSIGHTS_CONNECTION_STRING"] ?? string.Empty;
         string appInsightsURL = "";
@@ -36,7 +35,6 @@ public static class ApplicationInsightsExtensions
         {
             appInsightsURL = appInsightsConnectionString.Split('=')[2].Trim('/');
         }
-
 
         if (string.IsNullOrWhiteSpace(appInsightsKey))
         {
@@ -49,16 +47,12 @@ public static class ApplicationInsightsExtensions
             options.InstrumentationKey = appInsightsKey;
 #pragma warning restore CS0618
             options.ConnectionString = appInsightsConnectionString;
-
         });
 
         if (channelType == TelemetryChannelType.Sync)
         {
             builder.AddSingleton(typeof(ITelemetryChannel), new SyncTelemetryChannel(appInsightsURL));
         }
-
-        //builder.AddApplicationInsightsTelemetry(config);
-
 
         builder.AddScoped((ctx) =>
         {
@@ -86,7 +80,6 @@ public static class ApplicationInsightsExtensions
         Guard.IsNullOrWhiteSpace(serviceName, nameof(serviceName));
 
         ServiceNameTelemetryInitializer serviceNameEnricher = new ServiceNameTelemetryInitializer(serviceName);
-
         builder.AddSingleton<ITelemetryInitializer>(serviceNameEnricher);
 
         return builder;
@@ -96,8 +89,6 @@ public static class ApplicationInsightsExtensions
     {
         builder.AddSingleton<Serilog.ILogger>((ctx) =>
         {
-            //TelemetryClient client = ctx.GetService<TelemetryClient>();            
-
             LoggerConfiguration loggerConfiguration = GetLoggerConfiguration(serviceName);
 
             if (config != null && !string.IsNullOrWhiteSpace(config.GetValue<string>("FileLoggingPath")))
@@ -110,7 +101,6 @@ public static class ApplicationInsightsExtensions
 #if DEBUG
             loggerConfiguration.WriteTo.Console(LogEventLevel.Debug);
 #endif
-
             return loggerConfiguration.CreateLogger();
         });
 
@@ -133,7 +123,6 @@ public static class ApplicationInsightsExtensions
     {
 
         builder.AddScoped<IAppTelemetry, ApplicationInsightsTelemetrySink>();
-
 
         return builder;
     }

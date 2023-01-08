@@ -1,4 +1,4 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContactLinks;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLinkContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
@@ -21,7 +21,23 @@ public class ServicesDtoBuilder
         _openReferralServiceDto = new OpenReferralServiceDto();
     }
 
-    public ServicesDtoBuilder WithMainProperties(string id, ServiceTypeDto serviceType, string organisationId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees, bool canFamilyChooseDeliveryLocation)
+    public ServicesDtoBuilder WithMainProperties(
+        string          id,
+        ServiceTypeDto  serviceType,
+        string          organisationId,
+        string          name,
+        string?         description,
+        string?         accreditations,
+        DateTime?       assured_date,
+        string?         attending_access,
+        string?         attending_type,
+        string?         deliverable_type,
+        string?         status,
+        string?         url,
+        string?         email,
+        string?         fees,
+        bool            canFamilyChooseDeliveryLocation
+    )
     {
         _openReferralServiceDto.Id = id;
         _openReferralServiceDto.ServiceType = serviceType;
@@ -57,18 +73,17 @@ public class ServicesDtoBuilder
     {
         if (contactDtos == null) return this;
         
-        _openReferralServiceDto.ContactLinks ??= new List<OpenReferralContactLinkDto>();
+        _openReferralServiceDto.LinkContacts ??= new List<OpenReferralLinkContactDto>();
             
         foreach (var contact in contactDtos)
         {
-            _openReferralServiceDto.ContactLinks.Add(new OpenReferralContactLinkDto
+            _openReferralServiceDto.LinkContacts.Add(new OpenReferralLinkContactDto
             {
                 Contact = contact,
                 LinkId = _openReferralServiceDto.Id,
                 LinkType = "Service"
             });
         }
-
         return this;
     }
 

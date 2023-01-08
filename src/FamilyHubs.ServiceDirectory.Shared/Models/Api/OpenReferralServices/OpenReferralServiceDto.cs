@@ -1,4 +1,4 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContactLinks;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLinkContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
@@ -40,7 +40,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys,
         ICollection<OpenReferralRegularScheduleDto>? regular_schedules,
         ICollection<OpenReferralHolidayScheduleDto>? holiday_schedules,
-        ICollection<OpenReferralContactLinkDto> contactLinks)
+        ICollection<OpenReferralLinkContactDto> linkContacts)
     {
         Id = id;
         ServiceType = serviceType;
@@ -66,7 +66,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         Service_taxonomys = service_taxonomys;
         RegularSchedules = regular_schedules;
         HolidaySchedules = holiday_schedules;
-        ContactLinks = contactLinks;
+        LinkContacts = linkContacts;
     }
 
     public string Id { get; set; } = default!;
@@ -94,5 +94,5 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public ICollection<OpenReferralServiceTaxonomyDto>? Service_taxonomys { get; set; }
     public ICollection<OpenReferralRegularScheduleDto>? RegularSchedules { get; set; }
     public ICollection<OpenReferralHolidayScheduleDto>? HolidaySchedules { get; set; }
-    public ICollection<OpenReferralContactLinkDto>? ContactLinks { get; set; }
+    public ICollection<OpenReferralLinkContactDto>? LinkContacts { get; set; }
 }
