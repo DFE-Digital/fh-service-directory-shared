@@ -33,6 +33,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         bool canFamilyChooseDeliveryLocation,
         ICollection<OpenReferralServiceDeliveryExDto>? serviceDelivery,
         ICollection<OpenReferralEligibilityDto>? eligibilities,
+        ICollection<OpenReferralContactDto>? contacts,
         ICollection<OpenReferralCostOptionDto> cost_options,
         ICollection<OpenReferralLanguageDto>? languages,
         ICollection<OpenReferralServiceAreaDto>? service_areas,
@@ -59,6 +60,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
         CanFamilyChooseDeliveryLocation = canFamilyChooseDeliveryLocation;
         ServiceDelivery = serviceDelivery;
         Eligibilities = eligibilities;
+        Contacts = contacts;
         Cost_options = cost_options;
         Languages = languages;
         Service_areas = service_areas;
@@ -87,6 +89,7 @@ public record OpenReferralServiceDto : IOpenReferralServiceDto
     public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<OpenReferralServiceDeliveryExDto>? ServiceDelivery { get; set; }
     public ICollection<OpenReferralEligibilityDto>? Eligibilities { get; set; }
+    public ICollection<OpenReferralContactDto>? Contacts { get; set; }
     public ICollection<OpenReferralCostOptionDto>? Cost_options { get; set; }
     public ICollection<OpenReferralLanguageDto>? Languages { get; set; }
     public ICollection<OpenReferralServiceAreaDto>? Service_areas { get; set; }
