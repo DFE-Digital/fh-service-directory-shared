@@ -1,5 +1,4 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContactLinks;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
+﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
 using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
@@ -14,7 +13,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class ServicesDtoBuilder
 {
-    private OpenReferralServiceDto _openReferralServiceDto;
+    private readonly OpenReferralServiceDto _openReferralServiceDto;
 
     public ServicesDtoBuilder()
     {
@@ -53,22 +52,9 @@ public class ServicesDtoBuilder
         return this;
     }
 
-    public ServicesDtoBuilder WithContact(ICollection<OpenReferralContactDto>? contactDtos)
+    public ServicesDtoBuilder WithContact(ICollection<OpenReferralContactDto>? contacts)
     {
-        if (contactDtos == null) return this;
-        
-        _openReferralServiceDto.ContactLinks ??= new List<OpenReferralContactLinkDto>();
-            
-        foreach (var contact in contactDtos)
-        {
-            _openReferralServiceDto.ContactLinks.Add(new OpenReferralContactLinkDto
-            {
-                Contact = contact,
-                LinkId = _openReferralServiceDto.Id,
-                LinkType = "Service"
-            });
-        }
-
+        _openReferralServiceDto.Contacts = contacts;
         return this;
     }
 
