@@ -16,16 +16,13 @@ public interface IRedisCache
 
 public class RedisCache : IRedisCache
 {
-
-    private readonly IConfiguration _configuration;
     private readonly IDatabase _cache;
 
     public RedisCache(IConfiguration configuration)
     {
-        _configuration = configuration;
-        Lazy<ConnectionMultiplexer> connectionMultiplexer = new Lazy<ConnectionMultiplexer>(() =>
+        var connectionMultiplexer = new Lazy<ConnectionMultiplexer>(() =>
         {
-            string cacheConnection = _configuration["CacheConnection"] ?? string.Empty;
+            var cacheConnection = configuration["CacheConnection"] ?? string.Empty;
             return ConnectionMultiplexer.Connect(cacheConnection);
         });
 
@@ -75,9 +72,6 @@ public class RedisCache : IRedisCache
     {
         try
         {
-            if (key == null)
-                return default(T);
-
             var value = _cache.StringGet(key);
             if (!value.IsNull)
             {

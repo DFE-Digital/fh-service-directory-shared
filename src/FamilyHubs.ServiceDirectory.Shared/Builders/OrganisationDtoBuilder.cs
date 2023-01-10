@@ -6,7 +6,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class OrganisationDtoBuilder
 {
-    private OpenReferralOrganisationWithServicesDto _openReferralOrganisation;
+    private readonly OpenReferralOrganisationWithServicesDto _openReferralOrganisation;
 
     public OrganisationDtoBuilder()
     {
@@ -35,9 +35,9 @@ public class OrganisationDtoBuilder
         return this;
     }
 
-    public OrganisationDtoBuilder WithServices(ICollection<OpenReferralServiceDto>? Services)
+    public OrganisationDtoBuilder WithServices(ICollection<OpenReferralServiceDto>? services)
     {
-        _openReferralOrganisation.Services = Services;
+        _openReferralOrganisation.Services = services;
         return this;
     }
 

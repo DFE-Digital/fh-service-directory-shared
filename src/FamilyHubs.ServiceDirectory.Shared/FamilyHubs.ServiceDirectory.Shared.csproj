@@ -9,18 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.2.2" />
-	  <PackageReference Include="Azure.Identity" Version="1.7.0" />
-	  <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.4.0" />
-	  <PackageReference Include="Microsoft.ApplicationInsights" Version="2.21.0" />
-	  <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
-	  <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	  <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
-	  <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 	  <PackageReference Include="StackExchange.Redis" Version="2.6.70" />
   </ItemGroup>
 </Project>
