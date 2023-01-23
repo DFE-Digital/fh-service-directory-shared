@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.AccessibilityForDisabilities;
 
-public record AccessibilityForDisabilitiesDto : IAccessibilityForDisabilitiesDto
+public record AccessibilityForDisabilitiesDto
 {
     private AccessibilityForDisabilitiesDto() { }
     public AccessibilityForDisabilitiesDto(string id, string accessibility)

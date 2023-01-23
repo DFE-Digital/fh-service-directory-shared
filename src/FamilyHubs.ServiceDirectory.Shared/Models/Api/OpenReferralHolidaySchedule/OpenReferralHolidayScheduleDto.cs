@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralHolidaySchedule;
 
-public record OpenReferralHolidayScheduleDto : IOpenReferralHolidayScheduleDto
+public record OpenReferralHolidayScheduleDto
 {
     private OpenReferralHolidayScheduleDto() { }
     public OpenReferralHolidayScheduleDto(string id, bool closed, DateTime? closes_at, DateTime? start_date, DateTime? end_date, DateTime? opens_at)

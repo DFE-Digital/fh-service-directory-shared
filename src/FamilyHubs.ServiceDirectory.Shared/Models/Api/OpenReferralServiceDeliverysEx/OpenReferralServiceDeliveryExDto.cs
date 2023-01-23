@@ -2,7 +2,7 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
 
-public record OpenReferralServiceDeliveryExDto : IOpenReferralServiceDeliveryExDto
+public record OpenReferralServiceDeliveryExDto
 
 {
     public OpenReferralServiceDeliveryExDto() { }

@@ -3,7 +3,7 @@ using FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
 
-public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisationWithServicesDto
+public record OpenReferralOrganisationWithServicesDto
 {
     public OpenReferralOrganisationWithServicesDto() { }
     public OpenReferralOrganisationWithServicesDto(
@@ -33,8 +33,8 @@ public record OpenReferralOrganisationWithServicesDto : IOpenReferralOrganisatio
     public string? Logo { get; set; }
     public string? Uri { get; set; }
     public string? Url { get; set; }
-    public string? AdministractiveDistrictCode { get; set; }
-    public virtual ICollection<OpenReferralServiceDto>? Services { get; set; } = default!;
+    public string? AdminAreaCode { get; set; }
+    public ICollection<OpenReferralServiceDto>? Services { get; set; }
 
 }
 

@@ -22,7 +22,7 @@ public record OpenReferralOrganisationExDto : OpenReferralOrganisationDto
         ContactPhone = contactPhone;
     }
 
-    public string? Email { get; set; } = default!;
-    public string? ContactName { get; set; } = default!;
-    public string? ContactPhone { get; set; } = default!;
+    public string? Email { get; set; }
+    public string? ContactName { get; set; }
+    public string? ContactPhone { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralFunding;
 
-public record OpenReferralFundingDto : IOpenReferralFundingDto
+public record OpenReferralFundingDto
 {
     private OpenReferralFundingDto() { }
     public OpenReferralFundingDto(string id, string source)

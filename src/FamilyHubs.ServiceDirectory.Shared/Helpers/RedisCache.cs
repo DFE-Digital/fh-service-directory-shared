@@ -42,15 +42,7 @@ public class RedisCache : IRedisCache
 
     public string? GetStringValue(string key)
     {
-       
-        try
-        {
-            return _cache.StringGet(key);
-        }
-        catch  //(RedisConnectionException ex)
-        {
-            throw;
-        }
+        return _cache.StringGet(key);
     }
 
     public void SetValue<T>(string key, T value)
@@ -70,24 +62,15 @@ public class RedisCache : IRedisCache
 
     public T? GetValue<T>(string key)
     {
-        try
+        var value = _cache.StringGet(key);
+        if (!value.IsNull)
         {
-            var value = _cache.StringGet(key);
-            if (!value.IsNull)
-            {
 #pragma warning disable CS8604
-                return JsonConvert.DeserializeObject<T>(value);
+            return JsonConvert.DeserializeObject<T>(value);
 #pragma warning restore CS8604
-            }
-            else
-            {
-                return default(T);
-            }
         }
-        catch //(RedisConnectionException ex)
-        {
-            throw;
-        }
+
+        return default(T);
     }
 
 }

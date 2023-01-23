@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralRegularSchedule;
 
-public record OpenReferralRegularScheduleDto : IOpenReferralRegularScheduleDto
+public record OpenReferralRegularScheduleDto
 {
     private OpenReferralRegularScheduleDto() { }
     public OpenReferralRegularScheduleDto(string id, string description, DateTime? opens_at, DateTime? closes_at, string? byday, string? bymonthday, string? dtstart, string? freq, string? interval, DateTime? valid_from, DateTime? valid_to)

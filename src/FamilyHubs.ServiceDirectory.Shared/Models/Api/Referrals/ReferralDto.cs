@@ -34,16 +34,16 @@ public class ReferralDto
     public string FullName { get; set; } = default!;
     public string HasSpecialNeeds { get; set; } = default!;
     [MaxLength(255)]
-    public string? Email { get; set; } = default!;
+    public string? Email { get; set; }
     [Phone]
     [MaxLength(50)]
-    public string? Phone { get; set; } = default!;
+    public string? Phone { get; set; }
     [Phone]
     [MaxLength(50)]
-    public string? Text { get; set; } = default!;
+    public string? Text { get; set; }
     [MaxLength(1000)]
     public string ReasonForSupport { get; set; } = default!;
     [MaxLength(1000)]
-    public string? ReasonForRejection { get; set; } = default!;
+    public string? ReasonForRejection { get; set; }
     public virtual ICollection<ReferralStatusDto> Status { get; set; } = default!;
 }

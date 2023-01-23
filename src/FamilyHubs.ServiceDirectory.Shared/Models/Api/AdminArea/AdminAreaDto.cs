@@ -1,9 +1,9 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.AdministractiveDistrict;
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.AdminArea;
 
-public record AdministractiveDistrictDto : IAdministractiveDistrictDto
+public record AdminAreaDto
 {
-    public AdministractiveDistrictDto() { }
-    public AdministractiveDistrictDto(
+    public AdminAreaDto() { }
+    public AdminAreaDto(
         string id,
         string code,
         string organisationId

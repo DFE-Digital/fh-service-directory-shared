@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
 
-public record OpenReferralServiceAreaDto : IOpenReferralServiceAreaDto
+public record OpenReferralServiceAreaDto
 {
     public OpenReferralServiceAreaDto() { }
     public OpenReferralServiceAreaDto(

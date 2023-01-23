@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
 
-public class OrganisationTypeDto : IOrganisationTypeDto
+public class OrganisationTypeDto
 {
     private OrganisationTypeDto() { }
     public OrganisationTypeDto(string id, string name, string? description)
@@ -11,5 +11,5 @@ public class OrganisationTypeDto : IOrganisationTypeDto
     }
     public string Id { get; set; } = default!;
     public string Name { get; set; } = default!;
-    public string? Description { get; set; } = default!;
+    public string? Description { get; set; }
 }

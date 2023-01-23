@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.RelatedOrganisation;
 
-public class RelatedOrganisationDto : IRelatedOrganisationDto
+public class RelatedOrganisationDto
 {
     private RelatedOrganisationDto() { }
     public RelatedOrganisationDto(string id, string parentOrganisationId, string organisationId)

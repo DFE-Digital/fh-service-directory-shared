@@ -12,7 +12,7 @@ using FamilyHubs.ServiceDirectory.Shared.Models.Api.ServiceType;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
 
-public record OpenReferralServiceDto : IOpenReferralServiceDto
+public record OpenReferralServiceDto
 {
     public OpenReferralServiceDto() { }
     public OpenReferralServiceDto(

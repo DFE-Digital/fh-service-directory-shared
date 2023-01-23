@@ -1,6 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.ServiceType;
 
-public class ServiceTypeDto : IServiceTypeDto
+public class ServiceTypeDto
 {
     private ServiceTypeDto() { }
     public ServiceTypeDto(string id, string name, string? description)
@@ -12,5 +12,5 @@ public class ServiceTypeDto : IServiceTypeDto
 
     public string Id { get; set; } = default!;
     public string Name { get; set; } = default!;
-    public string? Description { get; set; } = default!;
+    public string? Description { get; set; }
 }

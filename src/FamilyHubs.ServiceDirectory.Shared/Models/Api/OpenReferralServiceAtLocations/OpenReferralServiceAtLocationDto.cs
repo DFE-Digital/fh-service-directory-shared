@@ -4,7 +4,7 @@ using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralRegularSchedule;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
 
-public record OpenReferralServiceAtLocationDto : IOpenReferralServiceAtLocationDto
+public record OpenReferralServiceAtLocationDto
 {
     public OpenReferralServiceAtLocationDto() { }
     public OpenReferralServiceAtLocationDto(
