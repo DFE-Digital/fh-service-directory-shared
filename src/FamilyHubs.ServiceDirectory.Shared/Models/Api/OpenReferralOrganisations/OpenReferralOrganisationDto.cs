@@ -31,5 +31,5 @@ public record OpenReferralOrganisationDto
     public string? Logo { get; init; }
     public string? Uri { get; init; }
     public string? Url { get; init; }
-    public string? AdministractiveDistrictCode { get; set; }
+    public string? AdminAreaCode { get; set; }
 }

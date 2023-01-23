@@ -29,7 +29,7 @@ public class OrganisationDtoBuilder
         return this;
     }
 
-    public OrganisationDtoBuilder WithAdministractiveDistrictCode(string code)
+    public OrganisationDtoBuilder WithAdminAreaCode(string code)
     {
         _openReferralOrganisation.AdminAreaCode = code;
         return this;
