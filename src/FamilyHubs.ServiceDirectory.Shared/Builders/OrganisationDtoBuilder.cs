@@ -1,48 +1,52 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralOrganisations;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OrganisationType;
+﻿using FamilyHubs.ServiceDirectory.Shared.Dto;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class OrganisationDtoBuilder
 {
-    private readonly OpenReferralOrganisationWithServicesDto _openReferralOrganisation;
+    private readonly OrganisationWithServicesDto _organisation;
 
     public OrganisationDtoBuilder()
     {
-        _openReferralOrganisation = new OpenReferralOrganisationWithServicesDto();
+        _organisation = new OrganisationWithServicesDto();
     }
 
     public OrganisationDtoBuilder WithMainProperties(string id, OrganisationTypeDto organisationType, string? name, string? description, string? logo, string? uri, string? url)
     {
-        _openReferralOrganisation.Id = id;
-        _openReferralOrganisation.OrganisationType = organisationType;
-        _openReferralOrganisation.Name = name;
-        _openReferralOrganisation.Description = description;
-        _openReferralOrganisation.Logo = logo;
-        _openReferralOrganisation.Uri = uri;
-        _openReferralOrganisation.Url = url;
+        _organisation.Id = id;
+        _organisation.OrganisationType = organisationType;
+        _organisation.Name = name;
+        _organisation.Description = description;
+        _organisation.Logo = logo;
+        _organisation.Uri = uri;
+        _organisation.Url = url;
         if (url != null && uri == null)
         {
-            _openReferralOrganisation.Uri = new Uri(url).ToString();
+            _organisation.Uri = new Uri(url).ToString();
         }
         return this;
     }
 
     public OrganisationDtoBuilder WithAdminAreaCode(string code)
     {
-        _openReferralOrganisation.AdminAreaCode = code;
+        _organisation.AdminAreaCode = code;
         return this;
     }
 
-    public OrganisationDtoBuilder WithServices(ICollection<OpenReferralServiceDto>? services)
+    public OrganisationDtoBuilder WithServices(ICollection<ServiceDto>? services)
     {
-        _openReferralOrganisation.Services = services;
+        _organisation.Services = services;
         return this;
     }
 
-    public OpenReferralOrganisationWithServicesDto Build()
+    public OrganisationDtoBuilder WithLinkContact(ICollection<LinkContactDto>? linkContacts)
     {
-        return _openReferralOrganisation;
+        _organisation.LinkContacts = linkContacts;
+        return this;
+    }
+
+    public OrganisationWithServicesDto Build()
+    {
+        return _organisation;
     }
 }

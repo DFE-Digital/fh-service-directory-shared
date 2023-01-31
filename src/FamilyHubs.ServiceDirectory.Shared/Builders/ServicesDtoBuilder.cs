@@ -1,95 +1,84 @@
-﻿using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralContacts;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralCostOptions;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralEligibilitys;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralLanguages;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAreas;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceAtLocations;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceDeliverysEx;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServices;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.OpenReferralServiceTaxonomys;
-using FamilyHubs.ServiceDirectory.Shared.Models.Api.ServiceType;
+﻿using FamilyHubs.ServiceDirectory.Shared.Dto;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
 public class ServicesDtoBuilder
 {
-    private readonly OpenReferralServiceDto _openReferralServiceDto;
+    private readonly ServiceDto _serviceDto;
 
     public ServicesDtoBuilder()
     {
-        _openReferralServiceDto = new OpenReferralServiceDto();
+        _serviceDto = new ServiceDto();
     }
 
-    public ServicesDtoBuilder WithMainProperties(string id, ServiceTypeDto serviceType, string organisationId, string name, string? description, string? accreditations, DateTime? assured_date, string? attending_access, string? attending_type, string? deliverable_type, string? status, string? url, string? email, string? fees, bool canFamilyChooseDeliveryLocation)
+    public ServicesDtoBuilder WithMainProperties(string id, ServiceTypeDto serviceType, string organisationId, string name, string? description, string? accreditations, DateTime? assuredDate, string? attendingAccess, string? attendingType, string? deliverableType, string? status, string? fees, bool canFamilyChooseDeliveryLocation)
     {
-        _openReferralServiceDto.Id = id;
-        _openReferralServiceDto.ServiceType = serviceType;
-        _openReferralServiceDto.OpenReferralOrganisationId = organisationId;
-        _openReferralServiceDto.Name = name;
-        _openReferralServiceDto.Description = description;
-        _openReferralServiceDto.Accreditations = accreditations;
-        _openReferralServiceDto.Assured_date = assured_date;
-        _openReferralServiceDto.Attending_access = attending_access;
-        _openReferralServiceDto.Attending_type = attending_type;
-        _openReferralServiceDto.Deliverable_type = deliverable_type;
-        _openReferralServiceDto.Status = status;
-        _openReferralServiceDto.Url = url;
-        _openReferralServiceDto.Email = email;
-        _openReferralServiceDto.Fees = fees;
-        _openReferralServiceDto.CanFamilyChooseDeliveryLocation = canFamilyChooseDeliveryLocation;
+        _serviceDto.Id = id;
+        _serviceDto.ServiceType = serviceType;
+        _serviceDto.OrganisationId = organisationId;
+        _serviceDto.Name = name;
+        _serviceDto.Description = description;
+        _serviceDto.Accreditations = accreditations;
+        _serviceDto.AssuredDate = assuredDate;
+        _serviceDto.AttendingAccess = attendingAccess;
+        _serviceDto.AttendingType = attendingType;
+        _serviceDto.DeliverableType = deliverableType;
+        _serviceDto.Status = status;
+        _serviceDto.Fees = fees;
+        _serviceDto.CanFamilyChooseDeliveryLocation = canFamilyChooseDeliveryLocation;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceDelivery(ICollection<OpenReferralServiceDeliveryExDto>? serviceDelivery)
+    public ServicesDtoBuilder WithServiceDelivery(ICollection<ServiceDeliveryDto>? serviceDelivery)
     {
-        _openReferralServiceDto.ServiceDelivery = serviceDelivery;
+        _serviceDto.ServiceDeliveries = serviceDelivery;
         return this;
     }
 
-    public ServicesDtoBuilder WithEligibility(ICollection<OpenReferralEligibilityDto>? eligibilities)
+    public ServicesDtoBuilder WithEligibility(ICollection<EligibilityDto>? eligibilities)
     {
-        _openReferralServiceDto.Eligibilities = eligibilities;
+        _serviceDto.Eligibilities = eligibilities;
         return this;
     }
 
-    public ServicesDtoBuilder WithContact(ICollection<OpenReferralContactDto>? contacts)
+    public ServicesDtoBuilder WithLinkContact(ICollection<LinkContactDto>? linkContacts)
     {
-        _openReferralServiceDto.Contacts = contacts;
+        _serviceDto.LinkContacts = linkContacts;
         return this;
     }
 
-    public ServicesDtoBuilder WithCostOption(ICollection<OpenReferralCostOptionDto> cost_options)
+    public ServicesDtoBuilder WithCostOption(ICollection<CostOptionDto> costOptions)
     {
-        _openReferralServiceDto.Cost_options = cost_options;
+        _serviceDto.CostOptions = costOptions;
         return this;
     }
 
-    public ServicesDtoBuilder WithLanguages(ICollection<OpenReferralLanguageDto>? languages)
+    public ServicesDtoBuilder WithLanguages(ICollection<LanguageDto>? languages)
     {
-        _openReferralServiceDto.Languages = languages;
+        _serviceDto.Languages = languages;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceAreas(ICollection<OpenReferralServiceAreaDto>? service_areas)
+    public ServicesDtoBuilder WithServiceAreas(ICollection<ServiceAreaDto>? serviceAreas)
     {
-        _openReferralServiceDto.Service_areas = service_areas;
+        _serviceDto.ServiceAreas = serviceAreas;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceAtLocations(ICollection<OpenReferralServiceAtLocationDto>? service_at_locations)
+    public ServicesDtoBuilder WithServiceAtLocations(ICollection<ServiceAtLocationDto>? serviceAtLocations)
     {
-        _openReferralServiceDto.Service_at_locations = service_at_locations;
+        _serviceDto.ServiceAtLocations = serviceAtLocations;
         return this;
     }
 
-    public ServicesDtoBuilder WithServiceTaxonomies(ICollection<OpenReferralServiceTaxonomyDto>? service_taxonomys)
+    public ServicesDtoBuilder WithServiceTaxonomies(ICollection<ServiceTaxonomyDto>? serviceTaxonomies)
     {
-        _openReferralServiceDto.Service_taxonomys = service_taxonomys;
+        _serviceDto.ServiceTaxonomies = serviceTaxonomies;
         return this;
     }
 
-    public OpenReferralServiceDto Build()
+    public ServiceDto Build()
     {
-        return _openReferralServiceDto;
+        return _serviceDto;
     }
 }

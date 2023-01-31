@@ -1,0 +1,31 @@
+﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+
+public record ContactDto
+{
+    public ContactDto() { }
+    public ContactDto(
+        string id,
+        string? title,
+        string name,
+        string telephone,
+        string textPhone,
+        string? url, 
+        string? email
+    )
+    {
+        Id = id;
+        Title = title;
+        Name = name;
+        Telephone = telephone;
+        TextPhone = textPhone;
+        Url = url;
+        Email = email;
+    }
+    public string Id { get; set; } = default!;
+    public string? Title { get; init; }
+    public string Name { get; init; } = default!;
+    public string Telephone { get; init; } = default!;
+    public string TextPhone { get; init; } = default!;
+    public string? Url { get; set; }
+    public string? Email { get; set; }
+}
