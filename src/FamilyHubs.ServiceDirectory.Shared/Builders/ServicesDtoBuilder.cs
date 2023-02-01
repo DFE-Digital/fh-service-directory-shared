@@ -41,9 +41,9 @@ public class ServicesDtoBuilder
         return this;
     }
 
-    public ServicesDtoBuilder WithLinkContact(ICollection<LinkContactDto>? linkContacts)
+    public ServicesDtoBuilder WithFundings(ICollection<FundingDto>? fundings)
     {
-        _serviceDto.LinkContacts = linkContacts;
+        _serviceDto.Fundings = fundings;
         return this;
     }
 
@@ -77,9 +77,21 @@ public class ServicesDtoBuilder
         return this;
     }
 
-    public ServicesDtoBuilder WithFundings(ICollection<FundingDto>? fundings)
+    public ServicesDtoBuilder WithRegularSchedules(ICollection<RegularScheduleDto>? regularSchedules)
     {
-        _serviceDto.Fundings = fundings;
+        _serviceDto.RegularSchedules = regularSchedules;
+        return this;
+    }
+
+    public ServicesDtoBuilder WithHolidaySchedules(ICollection<HolidayScheduleDto>? holidaySchedules)
+    {
+        _serviceDto.HolidaySchedules = holidaySchedules;
+        return this;
+    }
+
+    public ServicesDtoBuilder WithLinkContact(ICollection<LinkContactDto>? linkContacts)
+    {
+        _serviceDto.LinkContacts = linkContacts;
         return this;
     }
 
