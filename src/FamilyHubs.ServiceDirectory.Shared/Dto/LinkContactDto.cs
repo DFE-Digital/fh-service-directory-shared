@@ -2,7 +2,7 @@
 
 public class LinkContactDto
 {
-    public LinkContactDto(string? id, string linkType, string linkId, ContactDto contact)
+    public LinkContactDto(string? id, string linkId, string linkType, ContactDto contact)
     {
         Id = id;
         LinkType = linkType;
