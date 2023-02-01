@@ -8,6 +8,6 @@ public record AccessibilityForDisabilitiesDto
         Id = id;
         Accessibility = accessibility;
     }
-    public string Id { get; init; } = default!;
-    public string Accessibility { get; init; } = default!;
+    public string Id { get; set; } = default!;
+    public string Accessibility { get; set; } = default!;
 }

@@ -13,7 +13,7 @@ public record AdminAreaDto
         Code = code;
         OrganisationId = organisationId;
     }
-    public string Id { get; init; } = default!;
-    public string Code { get; init; } = default!;
-    public string OrganisationId { get; init; } = default!;
+    public string Id { get; set; } = default!;
+    public string Code { get; set; } = default!;
+    public string OrganisationId { get; set; } = default!;
 }

@@ -21,10 +21,10 @@ public class PhysicalAddressDto
     }
 
     public string Id { get; set; } = default!;
-    public string Address1 { get; init; } = default!;
-    public string? City { get; init; }
-    public string PostCode { get; init; } = default!;
-    public string? Country { get; init; }
-    public string? StateProvince { get; init; }
+    public string Address1 { get; set; } = default!;
+    public string? City { get; set; }
+    public string PostCode { get; set; } = default!;
+    public string? Country { get; set; }
+    public string? StateProvince { get; set; }
 }
 

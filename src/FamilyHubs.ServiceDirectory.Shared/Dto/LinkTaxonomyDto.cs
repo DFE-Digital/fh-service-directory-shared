@@ -11,8 +11,8 @@
         }
 
         public string Id { get; set; }
-        public string LinkType { get; init; }
+        public string LinkType { get; set; }
         public string LinkId { get; set; }
-        public TaxonomyDto? Taxonomy { get; init; }
+        public TaxonomyDto? Taxonomy { get; set; }
     }
 }

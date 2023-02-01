@@ -11,7 +11,7 @@ public class LinkContactDto
     }
 
     public string? Id { get; set; }
-    public string LinkType { get; init; }
+    public string LinkType { get; set; }
     public string LinkId { get; set; }
-    public ContactDto Contact { get; init; }
+    public ContactDto Contact { get; set; }
 }

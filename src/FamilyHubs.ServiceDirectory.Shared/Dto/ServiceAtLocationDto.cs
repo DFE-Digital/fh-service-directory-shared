@@ -18,9 +18,9 @@ public record ServiceAtLocationDto
     }
 
     public string Id { get; set; } = default!;
-    public LocationDto Location { get; init; } = default!;
-    public ICollection<RegularScheduleDto>? RegularSchedules { get; init; }
-    public ICollection<HolidayScheduleDto>? HolidaySchedules { get; init; }
+    public LocationDto Location { get; set; } = default!;
+    public ICollection<RegularScheduleDto>? RegularSchedules { get; set; }
+    public ICollection<HolidayScheduleDto>? HolidaySchedules { get; set; }
     public ICollection<LinkContactDto>? LinkContacts { get; set; }
 }
 

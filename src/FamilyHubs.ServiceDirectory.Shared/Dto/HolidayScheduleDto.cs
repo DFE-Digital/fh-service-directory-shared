@@ -12,7 +12,7 @@ public record HolidayScheduleDto
         EndDate = endDate;
         OpensAt = opensAt;
     }
-    public string Id { get; init; } = default!;
+    public string Id { get; set; } = default!;
     public bool Closed { get; set; }
     public DateTime? ClosesAt { get; set; }
     public DateTime? StartDate { get; set; }

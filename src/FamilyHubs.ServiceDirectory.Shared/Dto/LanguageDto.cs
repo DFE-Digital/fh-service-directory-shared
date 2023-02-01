@@ -9,5 +9,5 @@ public record LanguageDto
         Name = name;
     }
     public string Id { get; set; } = default!;
-    public string Name { get; init; } = default!;
+    public string Name { get; set; } = default!;
 }

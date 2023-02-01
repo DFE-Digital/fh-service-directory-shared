@@ -21,13 +21,13 @@ public record LocationDto
         LinkTaxonomies = linkTaxonomies;
         LinkContacts = linkContacts;
     }
-    public string Id { get; init; } = default!;
-    public string Name { get; init; } = default!;
-    public string? Description { get; init; }
-    public double Latitude { get; init; }
-    public double Longitude { get; init; }
+    public string Id { get; set; } = default!;
+    public string Name { get; set; } = default!;
+    public string? Description { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
     public double? Distance { get; set; } = default;
-    public ICollection<PhysicalAddressDto>? PhysicalAddresses { get; init; }
+    public ICollection<PhysicalAddressDto>? PhysicalAddresses { get; set; }
     public ICollection<LinkTaxonomyDto>? LinkTaxonomies { get; set; }
     public ICollection<LinkContactDto>? LinkContacts { get; set; }
 }

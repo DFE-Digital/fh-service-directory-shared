@@ -10,8 +10,8 @@ public record EligibilityDto
         MaximumAge = maximumAge;
         MinimumAge = minimumAge;
     }
-    public string Id { get; init; } = default!;
-    public string EligibilityDescription { get; init; } = default!;
-    public int MaximumAge { get; init; }
-    public int MinimumAge { get; init; }
+    public string Id { get; set; } = default!;
+    public string EligibilityDescription { get; set; } = default!;
+    public int MaximumAge { get; set; }
+    public int MinimumAge { get; set; }
 }

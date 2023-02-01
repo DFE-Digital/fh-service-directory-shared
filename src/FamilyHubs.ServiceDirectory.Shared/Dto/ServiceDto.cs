@@ -72,7 +72,7 @@ public record ServiceDto
     public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<ServiceDeliveryDto>? ServiceDeliveries { get; set; }
     public ICollection<EligibilityDto>? Eligibilities { get; set; }
-    public ICollection<FundingDto>? Fundings { get; }
+    public ICollection<FundingDto>? Fundings { get; set; }
     public ICollection<CostOptionDto>? CostOptions { get; set; }
     public ICollection<LanguageDto>? Languages { get; set; }
     public ICollection<ServiceAreaDto>? ServiceAreas { get; set; }

@@ -22,11 +22,11 @@ public class CostOptionDto
         ValidTo = validTo;
     }
     public string Id { get; set; } = default!;
-    public string AmountDescription { get; init; } = default!;
-    public decimal Amount { get; init; }
-    public string? LinkId { get; init; }
-    public string? Option { get; init; }
-    public DateTime? ValidFrom { get; init; }
-    public DateTime? ValidTo { get; init; }
+    public string AmountDescription { get; set; } = default!;
+    public decimal Amount { get; set; }
+    public string? LinkId { get; set; }
+    public string? Option { get; set; }
+    public DateTime? ValidFrom { get; set; }
+    public DateTime? ValidTo { get; set; }
 }
 

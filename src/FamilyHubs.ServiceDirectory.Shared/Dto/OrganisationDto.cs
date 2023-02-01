@@ -21,11 +21,11 @@ public record OrganisationDto
     }
 
     public OrganisationTypeDto OrganisationType { get; set; } = default!;
-    public string Id { get; init; } = default!;
-    public string? Name { get; init; }
-    public string? Description { get; init; }
-    public string? Logo { get; init; }
-    public string? Uri { get; init; }
-    public string? Url { get; init; }
+    public string Id { get; set; } = default!;
+    public string? Name { get; set; }
+    public string? Description { get; set; }
+    public string? Logo { get; set; }
+    public string? Uri { get; set; }
+    public string? Url { get; set; }
     public string? AdminAreaCode { get; set; }
 }

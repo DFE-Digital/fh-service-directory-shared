@@ -11,8 +11,8 @@ public record TaxonomyDto
         Parent = parent;
     }
 
-    public string Id { get; init; } = default!;
-    public string Name { get; init; } = default!;
-    public string? Vocabulary { get; init; }
-    public string? Parent { get; init; }
+    public string Id { get; set; } = default!;
+    public string Name { get; set; } = default!;
+    public string? Vocabulary { get; set; }
+    public string? Parent { get; set; }
 }

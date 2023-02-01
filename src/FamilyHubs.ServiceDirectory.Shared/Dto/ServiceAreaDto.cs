@@ -14,8 +14,8 @@ public record ServiceAreaDto
         Extent = extent;
         Uri = uri;
     }
-    public string Id { get; init; } = default!;
-    public string ServiceAreaDescription { get; init; } = default!;
-    public string? Extent { get; init; }
-    public string? Uri { get; init; }
+    public string Id { get; set; } = default!;
+    public string ServiceAreaDescription { get; set; } = default!;
+    public string? Extent { get; set; }
+    public string? Uri { get; set; }
 }

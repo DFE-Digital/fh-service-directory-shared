@@ -18,15 +18,15 @@ public record RegularScheduleDto
         ValidTo = validTo;
     }
 
-    public string Id { get; init; } = default!;
-    public string Description { get; init; } = default!;
-    public DateTime? OpensAt { get; init; }
-    public DateTime? ClosesAt { get; init; }
-    public string? ByDay { get; init; }
-    public string? ByMonthDay { get; init; }
-    public string? DtStart { get; init; }
-    public string? Freq { get; init; }
-    public string? Interval { get; init; }
-    public DateTime? ValidFrom { get; init; }
-    public DateTime? ValidTo { get; init; }
+    public string Id { get; set; } = default!;
+    public string Description { get; set; } = default!;
+    public DateTime? OpensAt { get; set; }
+    public DateTime? ClosesAt { get; set; }
+    public string? ByDay { get; set; }
+    public string? ByMonthDay { get; set; }
+    public string? DtStart { get; set; }
+    public string? Freq { get; set; }
+    public string? Interval { get; set; }
+    public DateTime? ValidFrom { get; set; }
+    public DateTime? ValidTo { get; set; }
 }

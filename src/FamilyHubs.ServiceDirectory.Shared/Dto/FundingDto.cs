@@ -8,6 +8,6 @@ public record FundingDto
         Id = id;
         Source = source;
     }
-    public string Id { get; init; } = default!;
-    public string Source { get; init; } = default!;
+    public string Id { get; set; } = default!;
+    public string Source { get; set; } = default!;
 }

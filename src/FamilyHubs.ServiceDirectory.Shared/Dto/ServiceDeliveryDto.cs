@@ -12,6 +12,6 @@ public record ServiceDeliveryDto
         Name = name;
     }
 
-    public string Id { get; init; } = default!;
-    public ServiceDeliveryType Name { get; init; }
+    public string Id { get; set; } = default!;
+    public ServiceDeliveryType Name { get; set; }
 }

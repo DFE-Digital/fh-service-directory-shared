@@ -77,6 +77,12 @@ public class ServicesDtoBuilder
         return this;
     }
 
+    public ServicesDtoBuilder WithFundings(ICollection<FundingDto>? fundings)
+    {
+        _serviceDto.Fundings = fundings;
+        return this;
+    }
+
     public ServiceDto Build()
     {
         return _serviceDto;

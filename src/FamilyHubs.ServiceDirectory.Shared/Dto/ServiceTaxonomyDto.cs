@@ -9,5 +9,5 @@ public record ServiceTaxonomyDto
         Taxonomy = taxonomy;
     }
     public string Id { get; set; } = default!;
-    public TaxonomyDto? Taxonomy { get; init; }
+    public TaxonomyDto? Taxonomy { get; set; }
 }

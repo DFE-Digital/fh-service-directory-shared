@@ -22,10 +22,10 @@ public record ContactDto
         Email = email;
     }
     public string Id { get; set; } = default!;
-    public string? Title { get; init; }
-    public string Name { get; init; } = default!;
-    public string Telephone { get; init; } = default!;
-    public string TextPhone { get; init; } = default!;
+    public string? Title { get; set; }
+    public string Name { get; set; } = default!;
+    public string Telephone { get; set; } = default!;
+    public string TextPhone { get; set; } = default!;
     public string? Url { get; set; }
     public string? Email { get; set; }
 }
