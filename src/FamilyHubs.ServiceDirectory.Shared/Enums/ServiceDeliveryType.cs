@@ -13,4 +13,3 @@ public enum ServiceDeliveryType : byte
     [Description("Telephone")]
     Telephone = 3
 }
-
