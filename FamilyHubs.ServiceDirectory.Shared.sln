@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22D6806A-8AB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyHubs.ServiceDirectory.Shared", "src\FamilyHubs.ServiceDirectory.Shared\FamilyHubs.ServiceDirectory.Shared.csproj", "{BFD8915F-F20A-444C-A3ED-73B47D6F847D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3B0374C4-6B6E-4F6B-9C9F-97BF9E0224F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyHubs.ServiceDirectory.Shared.UnitTests", "tests\FamilyHubs.ServiceDirectory.Shared.UnitTests\FamilyHubs.ServiceDirectory.Shared.UnitTests.csproj", "{7F682399-4ED9-4692-80DD-2C845DE480FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{BFD8915F-F20A-444C-A3ED-73B47D6F847D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD8915F-F20A-444C-A3ED-73B47D6F847D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD8915F-F20A-444C-A3ED-73B47D6F847D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F682399-4ED9-4692-80DD-2C845DE480FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F682399-4ED9-4692-80DD-2C845DE480FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F682399-4ED9-4692-80DD-2C845DE480FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F682399-4ED9-4692-80DD-2C845DE480FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BFD8915F-F20A-444C-A3ED-73B47D6F847D} = {22D6806A-8AB4-4944-8E15-480B9EC597A2}
+		{7F682399-4ED9-4692-80DD-2C845DE480FB} = {3B0374C4-6B6E-4F6B-9C9F-97BF9E0224F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3E0430C-3758-46F8-9E9C-8CCC925E6B34}
