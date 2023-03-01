@@ -123,4 +123,23 @@ public class ServiceDtoExtensionTests
         var result = ServiceDto.GetContact();
         Assert.Null(result);
     }
+
+    [Theory]
+    [InlineData(ServiceDeliveryType.Telephone)]
+    [InlineData(ServiceDeliveryType.Online)]
+    public void GetContactShouldReturnServiceLinkContactsContact(ServiceDeliveryType serviceDeliveryType)
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", serviceDeliveryType)
+        };
+        ServiceDto.LinkContacts = new List<LinkContactDto>
+        {
+            new LinkContactDto(null, "", "", new ContactDto("test", null, "", "", "", null, null))
+        };
+
+        var result = ServiceDto.GetContact();
+        Assert.NotNull(result);
+        Assert.Equal("test", result.Id);
+    }
 }
