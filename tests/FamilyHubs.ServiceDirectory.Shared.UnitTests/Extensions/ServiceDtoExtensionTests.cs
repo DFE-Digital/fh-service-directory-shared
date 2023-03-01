@@ -142,4 +142,35 @@ public class ServiceDtoExtensionTests
         Assert.NotNull(result);
         Assert.Equal("test", result.Id);
     }
+
+    [Fact]
+    public void GetContactShouldReturnServiceServiceAtLocationsLinkContactsContact()
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+        };
+        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>
+        {
+            new ServiceAtLocationDto("", new LocationDto(), null, null, new List<LinkContactDto>
+            {
+                new LinkContactDto(null, "", "", new ContactDto("test", null, "", "", "", null, null))
+            })
+        };
+
+        var result = ServiceDto.GetContact();
+        Assert.NotNull(result);
+        Assert.Equal("test", result.Id);
+    }
+
+    [Fact]
+    public void GetContactShouldThrowArgumentOutOfRangeExceptionWhenServiceDeliveriesNameIsOutOfRange()
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", (ServiceDeliveryType)byte.MaxValue)
+        };
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => ServiceDto.GetContact());
+    }
 }
