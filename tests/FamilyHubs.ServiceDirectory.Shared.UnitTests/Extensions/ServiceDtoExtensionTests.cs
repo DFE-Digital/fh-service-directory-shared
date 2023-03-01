@@ -29,12 +29,41 @@ public class ServiceDtoExtensionTests
         Assert.Null(result);
     }
 
-    [Fact]
-    public void GetContactShouldReturnNullWhenLinkContactsIsNull()
+    [Theory]
+    [InlineData(ServiceDeliveryType.Telephone)]
+    [InlineData(ServiceDeliveryType.Online)]
+    public void GetContactShouldReturnNullWhenServiceLinkContactsIsNull(ServiceDeliveryType serviceDeliveryType)
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.Online)
+            new ServiceDeliveryDto("", serviceDeliveryType)
+        };
+
+        var result = ServiceDto.GetContact();
+        Assert.Null(result);
+    }
+
+    [Theory]
+    [InlineData(ServiceDeliveryType.Telephone)]
+    [InlineData(ServiceDeliveryType.Online)]
+    public void GetContactShouldReturnNullWhenServiceLinkContactsIsEmpty(ServiceDeliveryType serviceDeliveryType)
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", serviceDeliveryType)
+        };
+        ServiceDto.LinkContacts = new List<LinkContactDto>();
+
+        var result = ServiceDto.GetContact();
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void GetContactShouldReturnNullWhenServiceAtLocationsIsNull()
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
         };
 
         var result = ServiceDto.GetContact();
@@ -42,13 +71,54 @@ public class ServiceDtoExtensionTests
     }
 
     [Fact]
-    public void GetContactShouldReturnNullWhenLinkContactsIsEmpty()
+    public void GetContactShouldReturnNullWhenServiceAtLocationsIsEmpty()
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.Online)
+            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
         };
-        ServiceDto.LinkContacts = new List<LinkContactDto>();
+        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>();
+
+        var result = ServiceDto.GetContact();
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void GetContactShouldReturnNullWhenServiceAtLocationsLinkContactsIsNull()
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+        };
+        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>();
+
+        var result = ServiceDto.GetContact();
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void GetContactShouldReturnNullWhenServiceAtLocationsLinkContactsIsEmpty()
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+        };
+        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>
+        {
+            new ServiceAtLocationDto("", new LocationDto(), null, null, new List<LinkContactDto>())
+        };
+
+        var result = ServiceDto.GetContact();
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void GetContactShouldReturnNullWhenServiceDeliveryTypeIsNotEntered()
+    {
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
+        {
+            new ServiceDeliveryDto("", ServiceDeliveryType.NotEntered)
+        };
 
         var result = ServiceDto.GetContact();
         Assert.Null(result);
