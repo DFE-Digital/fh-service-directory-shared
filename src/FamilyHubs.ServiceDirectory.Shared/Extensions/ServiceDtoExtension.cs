@@ -15,9 +15,9 @@ namespace FamilyHubs.ServiceDirectory.Shared.Extensions
             {
                 case ServiceDeliveryType.Telephone:
                 case ServiceDeliveryType.Online:
-                    return service.LinkContacts?.First().Contact;
+                    return service.LinkContacts?.FirstOrDefault()?.Contact;
                 case ServiceDeliveryType.InPerson:
-                    return service.ServiceAtLocations?.First().LinkContacts?.First().Contact;
+                    return service.ServiceAtLocations?.FirstOrDefault()?.LinkContacts?.FirstOrDefault()?.Contact;
                 case ServiceDeliveryType.NotEntered:
                     return null;
                 default:
