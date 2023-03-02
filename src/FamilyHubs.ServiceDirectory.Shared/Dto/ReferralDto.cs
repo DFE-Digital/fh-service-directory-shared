@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 public class ReferralDto
 {
     private ReferralDto() { }
-    public ReferralDto(string id, string organisationId, string serviceId, string serviceName, string serviceDescription, string serviceAsJson, string referrer, string fullName, string hasSpecialNeeds, string? email, string? phone, string? text, string reasonForSupport, string? reasonForRejection, ICollection<ReferralStatusDto> status)
+    public ReferralDto(string id, string organisationId, string serviceId, string serviceName, string serviceDescription, string serviceAsJson, string referrer, string fullName, string hasSpecialNeeds, string? email, string? phone, string? text, DateTime? dateRecieved, long requestNumber, string reasonForSupport, string? reasonForRejection, ICollection<ReferralStatusDto> status)
     {
         Id = id;
         OrganisationId = organisationId;
@@ -21,6 +21,8 @@ public class ReferralDto
         Text = text;
         ReasonForSupport = reasonForSupport;
         ReasonForRejection = reasonForRejection;
+        DateRecieved = dateRecieved;
+        RequestNumber = requestNumber;
         Status = status;
     }
 
@@ -41,6 +43,9 @@ public class ReferralDto
     [Phone]
     [MaxLength(50)]
     public string? Text { get; set; }
+    public DateTime? DateRecieved { get; set; } = default!;
+    public long RequestNumber { get; set; } = default!;
+
     [MaxLength(1000)]
     public string ReasonForSupport { get; set; } = default!;
     [MaxLength(1000)]
