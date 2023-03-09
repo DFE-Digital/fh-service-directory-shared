@@ -25,5 +25,4 @@ public record LocationDto
     public ICollection<RegularScheduleDto> RegularSchedules { get; set; } = new List<RegularScheduleDto>();
     public ICollection<HolidayScheduleDto> HolidaySchedules { get; set; } = new List<HolidayScheduleDto>();
     public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
-    public ICollection<ServiceDto> Services { get; set; } = new List<ServiceDto>();
 }
