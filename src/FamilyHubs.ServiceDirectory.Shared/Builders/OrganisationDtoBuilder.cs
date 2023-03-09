@@ -9,12 +9,11 @@ public class OrganisationDtoBuilder
 {
     private readonly OrganisationWithServicesDto _organisation;
 
-    public OrganisationDtoBuilder(long id, OrganisationType organisationType, string name, string description, string adminAreaCode, string? logo, string? uri, string? url)
+    public OrganisationDtoBuilder(OrganisationType organisationType, string name, string description, string adminAreaCode, string? logo, string? uri, string? url)
     {
         _organisation = new OrganisationWithServicesDto
         {
             OrganisationType = organisationType,
-            Id = id,
             Name = name,
             Description = description,
             AdminAreaCode = adminAreaCode,

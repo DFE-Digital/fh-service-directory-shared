@@ -9,11 +9,10 @@ public class LocationDtoBuilder
 {
     private readonly LocationDto _locationDto;
 
-    public LocationDtoBuilder(long id, LocationType locationType, string name, double latitude, double longitude, string address1, string city, string postCode, string stateProvince, string country, string? description, string? address2)
+    public LocationDtoBuilder(LocationType locationType, string name, double latitude, double longitude, string address1, string city, string postCode, string stateProvince, string country, string? description, string? address2)
     {
         _locationDto = new LocationDto
         {
-            Id = id,
             LocationType = locationType,
             Name = name,
             Latitude = latitude,

@@ -9,11 +9,10 @@ public class ServicesDtoBuilder
 {
     private readonly ServiceDto _serviceDto;
 
-    public ServicesDtoBuilder(long id, string serviceOwnerReferenceId, ServiceType serviceType, long organisationId, string name, string? description, string? accreditations, DateTime? assuredDate, AttendingAccessType attendingAccess, AttendingType attendingType, DeliverableType deliverableType, ServiceStatusType status, string? fees, bool canFamilyChooseDeliveryLocation)
+    public ServicesDtoBuilder(string serviceOwnerReferenceId, ServiceType serviceType, long organisationId, string name, string? description, string? accreditations, DateTime? assuredDate, AttendingAccessType attendingAccess, AttendingType attendingType, DeliverableType deliverableType, ServiceStatusType status, string? fees, bool canFamilyChooseDeliveryLocation)
     {
         _serviceDto = new ServiceDto
         {
-            Id = id,
             ServiceOwnerReferenceId = serviceOwnerReferenceId,
             ServiceType = serviceType,
             OrganisationId = organisationId,
