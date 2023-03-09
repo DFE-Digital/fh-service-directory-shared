@@ -8,6 +8,6 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 public record ServiceDeliveryDto
 {
     public long Id { get; set; }
-    public required long ServiceId { get; set; }
+    public long ServiceId { get; set; }
     public ServiceDeliveryType Name { get; set; }
 }

@@ -6,6 +6,6 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 public record AccessibilityForDisabilitiesDto
 {
     public long Id { get; set; }
-    public required long LocationId { get; set; }
+    public long LocationId { get; set; }
     public string? Accessibility { get; set; }
 }

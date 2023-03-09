@@ -10,7 +10,7 @@ public record ServiceDto
     public long Id { get; set; }
     public required string ServiceOwnerReferenceId { get; set; }
     public required ServiceType ServiceType { get; set; }
-    public required long OrganisationId { get; set; }
+    public long OrganisationId { get; set; }
     public required string Name { get; set; }
     public string? Description { get; set; }
     public ServiceStatusType Status { get; set; }
