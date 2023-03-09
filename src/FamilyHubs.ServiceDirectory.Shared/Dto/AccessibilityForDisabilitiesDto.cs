@@ -1,13 +1,11 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record AccessibilityForDisabilitiesDto
 {
-    private AccessibilityForDisabilitiesDto() { }
-    public AccessibilityForDisabilitiesDto(string id, string accessibility)
-    {
-        Id = id;
-        Accessibility = accessibility;
-    }
-    public string Id { get; set; } = default!;
-    public string Accessibility { get; set; } = default!;
+    public required long Id { get; set; }
+    public required long LocationId { get; set; }
+    public string? Accessibility { get; set; }
 }

@@ -1,41 +1,12 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record OrganisationWithServicesDto
+public record OrganisationWithServicesDto : OrganisationDto
 {
-    public OrganisationWithServicesDto()
-    {
-    }
-    public OrganisationWithServicesDto(
-        string id,
-        OrganisationTypeDto organisationType = default!,
-        string? name = default,
-        string? description = default,
-        string? logo = default,
-        string? uri = default,
-        string? url = default,
-        ICollection<ServiceDto>? services = default,
-        ICollection<LinkContactDto>? linkContacts = default)
-    {
-        Id = id;
-        OrganisationType = organisationType;
-        Name = name;
-        Description = description;
-        Logo = logo;
-        Uri = uri;
-        Url = url;
-        Services = services;
-        LinkContacts = linkContacts;
-    }
-
-    public OrganisationTypeDto OrganisationType { get; set; } = default!;
-    public string Id { get; set; } = default!;
-    public string? Name { get; set; }
-    public string? Description { get; set; }
-    public string? Logo { get; set; }
-    public string? Uri { get; set; }
-    public string? Url { get; set; }
-    public string? AdminAreaCode { get; set; }
-    public ICollection<ServiceDto>? Services { get; set; }
-    public ICollection<LinkContactDto>? LinkContacts { get; set; }
+    public ICollection<ServiceDto> Services { get; set; } = new List<ServiceDto>();
+    public ICollection<ReviewDto> Reviews { get; set; } = new List<ReviewDto>();
+    public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
+    public ICollection<TaxonomyDto> Taxonomies { get; set; } = new List<TaxonomyDto>();
 }
-

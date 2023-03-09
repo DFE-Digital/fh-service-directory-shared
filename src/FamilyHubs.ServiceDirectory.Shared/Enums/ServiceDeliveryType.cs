@@ -4,12 +4,12 @@ namespace FamilyHubs.ServiceDirectory.Shared.Enums;
 
 public enum ServiceDeliveryType : byte
 {
-    [Description("Not Entered")]
-    NotEntered = 0,
+    [Description("Not Set")]
+    NotSet    = 0,
     [Description("In Person")]
-    InPerson = 1,
+    InPerson  = 1,
     [Description("Online")]
-    Online = 2,
+    Online    = 2,
     [Description("Telephone")]
     Telephone = 3
 }

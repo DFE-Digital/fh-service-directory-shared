@@ -1,21 +1,16 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record HolidayScheduleDto
 {
-    private HolidayScheduleDto() { }
-    public HolidayScheduleDto(string id, bool closed, DateTime? closesAt, DateTime? startDate, DateTime? endDate, DateTime? opensAt)
-    {
-        Id = id;
-        Closed = closed;
-        ClosesAt = closesAt;
-        StartDate = startDate;
-        EndDate = endDate;
-        OpensAt = opensAt;
-    }
-    public string Id { get; set; } = default!;
+    public required long Id { get; set; }
+    public long? ServiceId { get; set; }
+    public long? LocationId { get; set; }
     public bool Closed { get; set; }
-    public DateTime? ClosesAt { get; set; }
-    public DateTime? StartDate { get; set; }
-    public DateTime? EndDate { get; set; }
     public DateTime? OpensAt { get; set; }
+    public DateTime? ClosesAt { get; set; }
+    public required DateTime StartDate { get; set; }
+    public required DateTime EndDate { get; set; }
 }

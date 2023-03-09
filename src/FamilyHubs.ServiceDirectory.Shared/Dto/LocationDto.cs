@@ -1,34 +1,29 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record LocationDto
 {
-    public LocationDto() { }
-    public LocationDto(string id,
-        string name,
-        string? description,
-        double latitude,
-        double longitude,
-        ICollection<PhysicalAddressDto>? physicalAddresses,
-        ICollection<LinkTaxonomyDto>? linkTaxonomies, 
-        ICollection<LinkContactDto>? linkContacts)
-    {
-        Id = id;
-        Name = name;
-        Description = description;
-        Latitude = latitude;
-        Longitude = longitude;
-        PhysicalAddresses = physicalAddresses;
-        LinkTaxonomies = linkTaxonomies;
-        LinkContacts = linkContacts;
-    }
-    public string Id { get; set; } = default!;
-    public string Name { get; set; } = default!;
+    public required long Id { get; set; }
+    public required LocationType LocationType { get; set; }
+    public required string Name { get; set; }
     public string? Description { get; set; }
-    public double Latitude { get; set; }
-    public double Longitude { get; set; }
-    public double? Distance { get; set; } = default;
-    public ICollection<PhysicalAddressDto>? PhysicalAddresses { get; set; }
-    public ICollection<LinkTaxonomyDto>? LinkTaxonomies { get; set; }
-    public ICollection<LinkContactDto>? LinkContacts { get; set; }
-}
+    public required double Latitude { get; set; }
+    public required double Longitude { get; set; }
+    public required string Address1 { get; set; }
+    public string? Address2 { get; set; }
+    public required string City { get; set; }
+    public required string PostCode { get; set; }
+    public required string StateProvince { get; set; }
+    public required string Country { get; set; }
+    public double? Distance { get; set; }
 
+    public ICollection<AccessibilityForDisabilitiesDto> AccessibilityForDisabilities { get; set; } = new List<AccessibilityForDisabilitiesDto>();
+    public ICollection<RegularScheduleDto> RegularSchedules { get; set; } = new List<RegularScheduleDto>();
+    public ICollection<HolidayScheduleDto> HolidaySchedules { get; set; } = new List<HolidayScheduleDto>();
+    public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
+    public ICollection<ServiceDto> Services { get; set; } = new List<ServiceDto>();
+}

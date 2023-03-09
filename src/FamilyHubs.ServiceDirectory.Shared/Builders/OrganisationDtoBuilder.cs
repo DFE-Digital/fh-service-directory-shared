@@ -1,4 +1,7 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Dto;
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedMember.Global
 
 namespace FamilyHubs.ServiceDirectory.Shared.Builders;
 
@@ -6,25 +9,24 @@ public class OrganisationDtoBuilder
 {
     private readonly OrganisationWithServicesDto _organisation;
 
-    public OrganisationDtoBuilder()
+    public OrganisationDtoBuilder(long id, OrganisationType organisationType, string name, string description, string adminAreaCode, string? logo, string? uri, string? url)
     {
-        _organisation = new OrganisationWithServicesDto();
-    }
-
-    public OrganisationDtoBuilder WithMainProperties(string id, OrganisationTypeDto organisationType, string? name, string? description, string? logo, string? uri, string? url)
-    {
-        _organisation.Id = id;
-        _organisation.OrganisationType = organisationType;
-        _organisation.Name = name;
-        _organisation.Description = description;
-        _organisation.Logo = logo;
-        _organisation.Uri = uri;
-        _organisation.Url = url;
-        if (url != null && uri == null)
+        _organisation = new OrganisationWithServicesDto
+        {
+            OrganisationType = organisationType,
+            Id = id,
+            Name = name,
+            Description = description,
+            AdminAreaCode = adminAreaCode,
+            Logo = logo,
+            Uri = uri,
+            Url = url
+        };
+        
+        if (url is not null && uri is null)
         {
             _organisation.Uri = new Uri(url).ToString();
         }
-        return this;
     }
 
     public OrganisationDtoBuilder WithAdminAreaCode(string code)
@@ -33,15 +35,21 @@ public class OrganisationDtoBuilder
         return this;
     }
 
-    public OrganisationDtoBuilder WithServices(ICollection<ServiceDto>? services)
+    public OrganisationDtoBuilder WithServices(ICollection<ServiceDto> services)
     {
         _organisation.Services = services;
         return this;
     }
 
-    public OrganisationDtoBuilder WithLinkContact(ICollection<LinkContactDto>? linkContacts)
+    public OrganisationDtoBuilder WithContact(ICollection<ContactDto> contacts)
     {
-        _organisation.LinkContacts = linkContacts;
+        _organisation.Contacts = contacts;
+        return this;
+    }
+
+    public OrganisationDtoBuilder WithReview(ICollection<ReviewDto> reviews)
+    {
+        _organisation.Reviews = reviews;
         return this;
     }
 

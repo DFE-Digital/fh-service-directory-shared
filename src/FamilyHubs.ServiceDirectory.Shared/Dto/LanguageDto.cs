@@ -1,13 +1,11 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record LanguageDto
 {
-    public LanguageDto() { }
-    public LanguageDto(string id, string name)
-    {
-        Id = id;
-        Name = name;
-    }
-    public string Id { get; set; } = default!;
-    public string Name { get; set; } = default!;
+    public required long Id { get; set; }
+    public required long ServiceId { get; set; }
+    public required string Name { get; set; }
 }

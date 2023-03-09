@@ -1,84 +1,37 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record ServiceDto
 {
-    public ServiceDto() { }
-    public ServiceDto(
-        string id,
-        ServiceTypeDto serviceType,
-        string organisationId,
-        string name,
-        string? description,
-        string? accreditations,
-        DateTime? assuredDate,
-        string? attendingAccess,
-        string? attendingType,
-        string? deliverableType,
-        string? status,
-        string? fees,
-        bool canFamilyChooseDeliveryLocation,
-        ICollection<ServiceDeliveryDto>? serviceDeliveries,
-        ICollection<EligibilityDto>? eligibilities,
-        ICollection<FundingDto>? fundings,
-        ICollection<CostOptionDto> costOptions,
-        ICollection<LanguageDto>? languages,
-        ICollection<ServiceAreaDto>? serviceAreas,
-        ICollection<ServiceAtLocationDto>? serviceAtLocations,
-        ICollection<ServiceTaxonomyDto>? serviceTaxonomies,
-        ICollection<RegularScheduleDto>? regularSchedules,
-        ICollection<HolidayScheduleDto>? holidaySchedules,
-        ICollection<LinkContactDto>? linkContacts
-    )
-    {
-        Id = id;
-        ServiceType = serviceType;
-        OrganisationId = organisationId;
-        Name = name;
-        Description = description;
-        Accreditations = accreditations;
-        AssuredDate = assuredDate;
-        AttendingAccess = attendingAccess;
-        AttendingType = attendingType;
-        DeliverableType = deliverableType;
-        Status = status;
-        Fees = fees;
-        CanFamilyChooseDeliveryLocation = canFamilyChooseDeliveryLocation;
-        ServiceDeliveries = serviceDeliveries;
-        Eligibilities = eligibilities;
-        Fundings = fundings;
-        CostOptions = costOptions;
-        Languages = languages;
-        ServiceAreas = serviceAreas;
-        ServiceAtLocations = serviceAtLocations;
-        ServiceTaxonomies = serviceTaxonomies;
-        RegularSchedules = regularSchedules;
-        HolidaySchedules = holidaySchedules;
-        LinkContacts = linkContacts;
-    }
-
-    public string Id { get; set; } = default!;
-    public ServiceTypeDto ServiceType { get; set; } = default!;
-    public string OrganisationId { get; set; } = default!;
-    public string Name { get; set; } = default!;
+    public required long Id { get; set; }
+    public required string ServiceOwnerReferenceId { get; set; }
+    public required ServiceType ServiceType { get; set; }
+    public required long OrganisationId { get; set; }
+    public required string Name { get; set; }
     public string? Description { get; set; }
-    public string? Accreditations { get; set; }
-    public DateTime? AssuredDate { get; set; }
-    public string? AttendingAccess { get; set; }
-    public string? AttendingType { get; set; }
-    public string? DeliverableType { get; set; }
-    public string? Status { get; set; }
+    public ServiceStatusType Status { get; set; }
     public string? Fees { get; set; }
-    public double? Distance { get; set; } = default;
+    public string? Accreditations { get; set; }
+    public DeliverableType DeliverableType { get; set; }
+    public DateTime? AssuredDate { get; set; }
+    public AttendingType AttendingType { get; set; }
+    public AttendingAccessType AttendingAccess { get; set; }
+    public double? Distance { get; set; }
     public bool CanFamilyChooseDeliveryLocation { get; set; }
-    public ICollection<ServiceDeliveryDto>? ServiceDeliveries { get; set; }
-    public ICollection<EligibilityDto>? Eligibilities { get; set; }
-    public ICollection<FundingDto>? Fundings { get; set; }
-    public ICollection<CostOptionDto>? CostOptions { get; set; }
-    public ICollection<LanguageDto>? Languages { get; set; }
-    public ICollection<ServiceAreaDto>? ServiceAreas { get; set; }
-    public ICollection<ServiceAtLocationDto>? ServiceAtLocations { get; set; }
-    public ICollection<ServiceTaxonomyDto>? ServiceTaxonomies { get; set; }
-    public ICollection<RegularScheduleDto>? RegularSchedules { get; set; }
-    public ICollection<HolidayScheduleDto>? HolidaySchedules { get; set; }
-    public ICollection<LinkContactDto>? LinkContacts { get; set; }
+    public ICollection<ServiceDeliveryDto> ServiceDeliveries { get; set; } = new List<ServiceDeliveryDto>();
+    public ICollection<EligibilityDto> Eligibilities { get; set; } = new List<EligibilityDto>();
+    public ICollection<FundingDto> Fundings { get; set; } = new List<FundingDto>();
+    public ICollection<CostOptionDto> CostOptions { get; set; } = new List<CostOptionDto>();
+    public ICollection<LanguageDto> Languages { get; set; } = new List<LanguageDto>();
+    public ICollection<ServiceAreaDto> ServiceAreas { get; set; } = new List<ServiceAreaDto>();
+    public ICollection<LocationDto> Locations { get; set; } = new List<LocationDto>();
+    public ICollection<TaxonomyDto> Taxonomies { get; set; } = new List<TaxonomyDto>();
+    public ICollection<RegularScheduleDto> RegularSchedules { get; set; } = new List<RegularScheduleDto>();
+    public ICollection<HolidayScheduleDto> HolidaySchedules { get; set; } = new List<HolidayScheduleDto>();
+    public ICollection<ReviewDto> Reviews { get; set; } = new List<ReviewDto>();
+    public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
 }

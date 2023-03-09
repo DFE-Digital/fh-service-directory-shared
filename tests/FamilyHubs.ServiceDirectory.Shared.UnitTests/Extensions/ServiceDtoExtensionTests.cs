@@ -7,11 +7,18 @@ namespace FamilyHubs.ServiceDirectory.Shared.UnitTests.Extensions;
 
 public class ServiceDtoExtensionTests
 {
-    public ServiceDto ServiceDto { get; set; }
+    private ServiceDto ServiceDto { get; }
 
     public ServiceDtoExtensionTests()
     {
-        ServiceDto = new ServiceDto();
+        ServiceDto = new ServiceDto
+        {
+            Id = Random.Shared.Next(),
+            ServiceType = ServiceType.NotSet,
+            OrganisationId = Random.Shared.Next(),
+            Name = "TestService",
+            ServiceOwnerReferenceId = "serviceId1"
+        };
     }
 
     [Fact]
@@ -25,6 +32,7 @@ public class ServiceDtoExtensionTests
     public void GetContactShouldReturnNullWhenServiceDeliveriesIsEmpty()
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>();
+
         var result = ServiceDto.GetContact();
         Assert.Null(result);
     }
@@ -36,7 +44,12 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", serviceDeliveryType)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = serviceDeliveryType
+            }
         };
 
         var result = ServiceDto.GetContact();
@@ -50,9 +63,14 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", serviceDeliveryType)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = serviceDeliveryType
+            }
         };
-        ServiceDto.LinkContacts = new List<LinkContactDto>();
+        ServiceDto.Contacts = new List<ContactDto>();
 
         var result = ServiceDto.GetContact();
         Assert.Null(result);
@@ -63,7 +81,12 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = ServiceDeliveryType.InPerson
+            }
         };
 
         var result = ServiceDto.GetContact();
@@ -75,9 +98,15 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = ServiceDeliveryType.InPerson
+            }
         };
-        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>();
+
+        ServiceDto.Locations = new List<LocationDto>();
 
         var result = ServiceDto.GetContact();
         Assert.Null(result);
@@ -88,9 +117,14 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = ServiceDeliveryType.InPerson
+            }
         };
-        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>();
+        ServiceDto.Locations = new List<LocationDto>();
 
         var result = ServiceDto.GetContact();
         Assert.Null(result);
@@ -101,11 +135,30 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = ServiceDeliveryType.InPerson
+            }
         };
-        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>
+
+        ServiceDto.Locations = new List<LocationDto>
         {
-            new ServiceAtLocationDto("", new LocationDto(), null, null, new List<LinkContactDto>())
+            new LocationDto
+            {
+                Id = Random.Shared.Next(),
+                LocationType = LocationType.NotSet,
+                Name = "",
+                Latitude = 0,
+                Longitude = 0,
+                Address1 = "",
+                City = "",
+                PostCode = "",
+                StateProvince = "",
+                Country = "",
+                Contacts = new List<ContactDto>()
+            }
         };
 
         var result = ServiceDto.GetContact();
@@ -117,7 +170,12 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.NotEntered)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = ServiceDeliveryType.NotSet
+            }
         };
 
         var result = ServiceDto.GetContact();
@@ -129,38 +187,73 @@ public class ServiceDtoExtensionTests
     [InlineData(ServiceDeliveryType.Online)]
     public void GetContactShouldReturnServiceLinkContactsContact(ServiceDeliveryType serviceDeliveryType)
     {
+        var contactId = Random.Shared.Next();
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", serviceDeliveryType)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = serviceDeliveryType
+            }
         };
-        ServiceDto.LinkContacts = new List<LinkContactDto>
+        ServiceDto.Contacts = new List<ContactDto>
         {
-            new LinkContactDto(null, "", "", new ContactDto("test", null, "", "", "", null, null))
+            new ContactDto
+            {
+                Id = contactId,
+                Telephone = "1234"
+            }
         };
 
         var result = ServiceDto.GetContact();
         Assert.NotNull(result);
-        Assert.Equal("test", result.Id);
+        Assert.Equal(contactId, result.Id);
+        Assert.Equal("1234", result.Telephone);
     }
 
     [Fact]
     public void GetContactShouldReturnServiceServiceAtLocationsLinkContactsContact()
     {
+        var contactId = Random.Shared.Next();
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", ServiceDeliveryType.InPerson)
-        };
-        ServiceDto.ServiceAtLocations = new List<ServiceAtLocationDto>
-        {
-            new ServiceAtLocationDto("", new LocationDto(), null, null, new List<LinkContactDto>
+            new ServiceDeliveryDto
             {
-                new LinkContactDto(null, "", "", new ContactDto("test", null, "", "", "", null, null))
-            })
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = ServiceDeliveryType.InPerson
+            }
+        };
+        ServiceDto.Locations = new List<LocationDto>
+        {
+            new LocationDto
+            {
+                Id = Random.Shared.Next(),
+                LocationType = LocationType.NotSet,
+                Name = "",
+                Latitude = 0,
+                Longitude = 0,
+                Address1 = "",
+                City = "",
+                PostCode = "",
+                StateProvince = "",
+                Country = "",
+                Contacts = new List<ContactDto>
+                {
+                    new ContactDto
+                    {
+                        Id = contactId,
+                        Telephone = "9876"
+                    }
+                }
+            }
         };
 
         var result = ServiceDto.GetContact();
         Assert.NotNull(result);
-        Assert.Equal("test", result.Id);
+        Assert.Equal(contactId, result.Id);
+        Assert.Equal("9876", result.Telephone);
     }
 
     [Fact]
@@ -168,7 +261,12 @@ public class ServiceDtoExtensionTests
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
-            new ServiceDeliveryDto("", (ServiceDeliveryType)byte.MaxValue)
+            new ServiceDeliveryDto
+            {
+                Id = Random.Shared.Next(),
+                ServiceId = Random.Shared.Next(),
+                Name = (ServiceDeliveryType)byte.MaxValue
+            }
         };
 
         Assert.Throws<ArgumentOutOfRangeException>(() => ServiceDto.GetContact());

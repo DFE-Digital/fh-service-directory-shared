@@ -1,32 +1,25 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record RegularScheduleDto
 {
-    private RegularScheduleDto() { }
-    public RegularScheduleDto(string id, string description, DateTime? opensAt, DateTime? closesAt, string? byDay, string? byMonthDay, string? dtStart, string? freq, string? interval, DateTime? validFrom, DateTime? validTo)
-    {
-        Id = id;
-        Description = description;
-        OpensAt = opensAt;
-        ClosesAt = closesAt;
-        ByDay = byDay;
-        ByMonthDay = byMonthDay;
-        DtStart = dtStart;
-        Freq = freq;
-        Interval = interval;
-        ValidFrom = validFrom;
-        ValidTo = validTo;
-    }
-
-    public string Id { get; set; } = default!;
-    public string Description { get; set; } = default!;
+    public required long Id { get; set; }
+    public long? ServiceId { get; set; }
+    public long? LocationId { get; set; }
+    public DayOfWeek Weekday { get; set; }
     public DateTime? OpensAt { get; set; }
     public DateTime? ClosesAt { get; set; }
-    public string? ByDay { get; set; }
-    public string? ByMonthDay { get; set; }
-    public string? DtStart { get; set; }
-    public string? Freq { get; set; }
-    public string? Interval { get; set; }
     public DateTime? ValidFrom { get; set; }
     public DateTime? ValidTo { get; set; }
+    public string? DtStart { get; set; }
+    public FrequencyType Freq { get; set; }
+    public string? Interval { get; set; }
+    public string? ByDay { get; set; }
+    public string? ByMonthDay { get; set; }
+    public string? Description { get; set; }
 }

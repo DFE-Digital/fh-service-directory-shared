@@ -1,31 +1,18 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto;
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+
+namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record OrganisationDto
 {
-    public OrganisationDto() { }
-    public OrganisationDto(string id,
-        OrganisationTypeDto organisationType,
-        string name,
-        string? description,
-        string? logo,
-        string? uri,
-        string? url)
-    {
-        Id = id;
-        OrganisationType = organisationType;
-        Name = name;
-        Description = description;
-        Logo = logo;
-        Uri = uri;
-        Url = url;
-    }
-
-    public OrganisationTypeDto OrganisationType { get; set; } = default!;
-    public string Id { get; set; } = default!;
-    public string? Name { get; set; }
-    public string? Description { get; set; }
+    public required OrganisationType OrganisationType { get; set; }
+    public required long Id { get; set; }
+    public required string Name { get; set; }
+    public required string Description { get; set; }
+    public required string AdminAreaCode { get; set; }
+    public long? AssociatedOrganisationId { get; set; }
     public string? Logo { get; set; }
     public string? Uri { get; set; }
     public string? Url { get; set; }
-    public string? AdminAreaCode { get; set; }
 }
