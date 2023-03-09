@@ -7,7 +7,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record EligibilityDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public required long ServiceId { get; set; }
     public EligibilityType EligibilityType { get; set; }
     public required int MaximumAge { get; set; }

@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record ReviewDto
 {    
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public long? ServiceId { get; set; }
     public long? OrganisationId { get; set; }
     public string? Title { get; set; }

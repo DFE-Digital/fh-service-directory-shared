@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record ContactDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public string? Title { get; set; }
     public string? Name { get; set; }
     public required string Telephone { get; set; }

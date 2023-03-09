@@ -7,7 +7,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record TaxonomyDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public required string Name { get; set; }
     public TaxonomyType TaxonomyType { get; set; }
     public long? ParentId { get; set; }

@@ -7,7 +7,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record LocationDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public required LocationType LocationType { get; set; }
     public required string Name { get; set; }
     public string? Description { get; set; }

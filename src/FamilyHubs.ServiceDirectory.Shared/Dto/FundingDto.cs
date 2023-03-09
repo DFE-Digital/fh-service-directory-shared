@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record FundingDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public required long ServiceId { get; set; }
     public string? Source { get; set; }
 }

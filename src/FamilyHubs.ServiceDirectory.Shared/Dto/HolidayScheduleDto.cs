@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record HolidayScheduleDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public long? ServiceId { get; set; }
     public long? LocationId { get; set; }
     public bool Closed { get; set; }

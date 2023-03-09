@@ -7,7 +7,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record ServiceDto
 {
-    public required long Id { get; set; }
+    public long Id { get; set; }
     public required string ServiceOwnerReferenceId { get; set; }
     public required ServiceType ServiceType { get; set; }
     public required long OrganisationId { get; set; }
