@@ -40,12 +40,6 @@ public class OrganisationDtoBuilder
         return this;
     }
 
-    public OrganisationDtoBuilder WithContact(ICollection<ContactDto> contacts)
-    {
-        _organisation.Contacts = contacts;
-        return this;
-    }
-
     public OrganisationDtoBuilder WithReview(ICollection<ReviewDto> reviews)
     {
         _organisation.Reviews = reviews;

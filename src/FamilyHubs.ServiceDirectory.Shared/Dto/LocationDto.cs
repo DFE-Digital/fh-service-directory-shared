@@ -1,13 +1,13 @@
 ﻿// ReSharper disable UnusedMember.Global
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable ClassNeverInstantiated.Global
+using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record LocationDto
+public record LocationDto : DtoBase<long>
 {
-    public long Id { get; set; }
     public required LocationType LocationType { get; set; }
     public required string Name { get; set; }
     public string? Description { get; set; }

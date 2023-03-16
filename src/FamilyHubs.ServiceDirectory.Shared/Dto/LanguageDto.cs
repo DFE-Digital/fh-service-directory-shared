@@ -1,11 +1,11 @@
 ﻿// ReSharper disable UnusedMember.Global
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable ClassNeverInstantiated.Global
+using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
+
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record LanguageDto
+public record LanguageDto : ServiceDtoBase<long>
 {
-    public long Id { get; set; }
-    public long ServiceId { get; set; }
     public required string Name { get; set; }
 }

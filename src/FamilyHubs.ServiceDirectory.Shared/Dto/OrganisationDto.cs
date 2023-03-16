@@ -1,13 +1,13 @@
 ﻿// ReSharper disable UnusedMember.Global
 // ReSharper disable UnusedAutoPropertyAccessor.Global
+using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record OrganisationDto
+public record OrganisationDto : DtoBase<long>
 {
     public required OrganisationType OrganisationType { get; set; }
-    public long Id { get; set; }
     public required string Name { get; set; }
     public required string Description { get; set; }
     public required string AdminAreaCode { get; set; }

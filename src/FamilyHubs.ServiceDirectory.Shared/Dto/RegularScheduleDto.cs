@@ -2,15 +2,13 @@
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
+using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record RegularScheduleDto
+public record RegularScheduleDto : DtoBase<long>
 {
-    public long Id { get; set; }
-    public long? ServiceId { get; set; }
-    public long? LocationId { get; set; }
     public DayOfWeek Weekday { get; set; }
     public DateTime? OpensAt { get; set; }
     public DateTime? ClosesAt { get; set; }
@@ -22,4 +20,6 @@ public record RegularScheduleDto
     public string? ByDay { get; set; }
     public string? ByMonthDay { get; set; }
     public string? Description { get; set; }
+    public long? ServiceId { get; set; }
+    public long? LocationId { get; set; }
 }
