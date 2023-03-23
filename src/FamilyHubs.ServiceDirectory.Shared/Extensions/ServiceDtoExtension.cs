@@ -1,5 +1,4 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Dto;
-using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Extensions
 {
@@ -11,18 +10,8 @@ namespace FamilyHubs.ServiceDirectory.Shared.Extensions
             if (!service.ServiceDeliveries.Any())
                 return null;
             
-            switch (service.ServiceDeliveries.First().Name)
-            {
-                case ServiceDeliveryType.Telephone:
-                case ServiceDeliveryType.Online:
-                    return service.Contacts.FirstOrDefault();
-                case ServiceDeliveryType.InPerson:
-                    return service.Locations.FirstOrDefault()?.Contacts.FirstOrDefault();
-                case ServiceDeliveryType.NotSet:
-                    return null;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            return service.Contacts.FirstOrDefault() ?? 
+                   service.Locations.SelectMany(x => x.Contacts).FirstOrDefault();
         }
     }
 }
