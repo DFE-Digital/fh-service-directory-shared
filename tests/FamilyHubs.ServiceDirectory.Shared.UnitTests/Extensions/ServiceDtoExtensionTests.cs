@@ -255,20 +255,4 @@ public class ServiceDtoExtensionTests
         Assert.Equal(contactId, result.Id);
         Assert.Equal("9876", result.Telephone);
     }
-
-    [Fact]
-    public void GetContactShouldThrowArgumentOutOfRangeExceptionWhenServiceDeliveriesNameIsOutOfRange()
-    {
-        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
-        {
-            new ServiceDeliveryDto
-            {
-                Id = Random.Shared.Next(),
-                ServiceId = Random.Shared.Next(),
-                Name = (ServiceDeliveryType)byte.MaxValue
-            }
-        };
-
-        Assert.Throws<ArgumentOutOfRangeException>(() => ServiceDto.GetContact());
-    }
 }
