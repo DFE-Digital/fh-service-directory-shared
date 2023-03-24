@@ -1,0 +1,22 @@
+﻿using FamilyHubs.ServiceDirectory.Shared.Dto;
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+
+namespace FamilyHubs.ServiceDirectory.Shared.UnitTests.Comparer;
+
+public class ServiceDeliveryComparerTests : DtoComparerTestBase<ServiceDeliveryDto, Enum>
+{
+    public ServiceDeliveryComparerTests() : base(new ServiceDeliveryDto
+    {
+        Id = 0,
+        ServiceId = 0,
+        Name = ServiceDeliveryType.Online,
+    }, new ServiceDeliveryDto
+    {
+        Id = 0,
+        ServiceId = 0,
+        Name = ServiceDeliveryType.Online,
+    }, dto => dto.Name)
+    {
+
+    }
+}
