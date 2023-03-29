@@ -1,4 +1,5 @@
-﻿namespace FamilyHubs.ServiceDirectory.Shared.Models;
+﻿// ReSharper disable StringLiteralTypo
+namespace FamilyHubs.ServiceDirectory.Shared.Models;
 
 public static class StaticData
 {
