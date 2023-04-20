@@ -12,7 +12,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record RegularScheduleDto : DtoBase<long>
 {
-    public DayOfWeek Weekday { get; set; }
+    public DayOfWeek? Weekday { get; set; }
     public DateTime? OpensAt { get; set; }
     public DateTime? ClosesAt { get; set; }
     public DateTime? ValidFrom { get; set; }
