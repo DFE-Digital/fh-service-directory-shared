@@ -10,6 +10,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record ServiceDeliveryDto : ServiceDtoBase<long>
 {
+    //todo: why is the delivery type property called Name?
     public ServiceDeliveryType Name { get; set; }
     public override int GetHashCode()
     {

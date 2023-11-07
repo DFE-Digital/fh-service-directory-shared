@@ -10,6 +10,7 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
+//todo: shouldn't this derive from ServiceDtoBase?
 public record ServiceDto : OrganisationDtoBase<long>
 {
     public required string ServiceOwnerReferenceId { get; set; }
