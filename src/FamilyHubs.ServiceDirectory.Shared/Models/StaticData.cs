@@ -3,7 +3,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Models;
 
 public static class StaticData
 {
-    public static IReadOnlyDictionary<string, string> AuthorityCache = new Dictionary<string, string>
+    public static readonly IReadOnlyDictionary<string, string> AuthorityCache = new Dictionary<string, string>
     {
         //E06000001 = codes.admin_district
             {"E06000001", "Hartlepool"},

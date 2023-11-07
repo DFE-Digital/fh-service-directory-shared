@@ -10,7 +10,7 @@ public static class Utility
 
         if (fi != null && fi.GetCustomAttributes(typeof(DescriptionAttribute), false) is DescriptionAttribute[] attributes && attributes.Any())
         {
-            return attributes.First().Description;
+            return attributes[0].Description;
         }
 
         return value.ToString();
