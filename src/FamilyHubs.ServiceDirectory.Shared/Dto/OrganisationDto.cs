@@ -10,7 +10,7 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record OrganisationDto : DtoBase<long>
+public record OrganisationDto : DtoBase
 {
     public required OrganisationType OrganisationType { get; set; }
     public required string Name { get; set; }

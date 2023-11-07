@@ -9,7 +9,7 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record ContactDto : DtoBase<long>
+public record ContactDto : DtoBase
 {
     public string? Title { get; set; }
     public string? Name { get; set; }

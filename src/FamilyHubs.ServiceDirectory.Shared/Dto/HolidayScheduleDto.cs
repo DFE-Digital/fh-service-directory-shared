@@ -8,7 +8,7 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record HolidayScheduleDto : DtoBase<long>
+public record HolidayScheduleDto : DtoBase
 {
     public bool Closed { get; set; }
     public DateTime? OpensAt { get; set; }

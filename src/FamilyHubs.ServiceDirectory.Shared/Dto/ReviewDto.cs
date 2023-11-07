@@ -8,7 +8,7 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record ReviewDto : DtoBase<long>
+public record ReviewDto : DtoBase
 {
     public string? Title { get; set; }
     public string? Description { get; set; }

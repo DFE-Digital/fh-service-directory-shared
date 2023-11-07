@@ -9,7 +9,7 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record LocationDto : DtoBase<long>
+public record LocationDto : DtoBase
 {
     public required LocationType LocationType { get; set; }
     public required string Name { get; set; }

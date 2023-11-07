@@ -6,7 +6,7 @@ using Xunit;
 
 namespace FamilyHubs.ServiceDirectory.Shared.UnitTests.Comparer;
 
-public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase<long>
+public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase
 {
     private readonly T _sut;
     private T _other;
