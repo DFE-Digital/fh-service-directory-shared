@@ -1,12 +1,10 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 using FamilyHubs.ServiceDirectory.Shared.Enums;
-#pragma warning disable CS8607
-#pragma warning disable CS8604
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 //todo: shouldn't this derive from ServiceDtoBase?
-public record ServiceDto : OrganisationDtoBase<long>
+public record ServiceDto : OrganisationDtoBase
 {
     public required string ServiceOwnerReferenceId { get; set; }
     public required string Name { get; set; }

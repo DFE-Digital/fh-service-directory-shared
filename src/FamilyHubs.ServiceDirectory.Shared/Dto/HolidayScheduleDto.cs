@@ -1,5 +1,4 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
-#pragma warning disable CS8607
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 

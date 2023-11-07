@@ -2,7 +2,7 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record LanguageDto : ServiceDtoBase<long>
+public record LanguageDto : ServiceDtoBase
 {
     public required string Name { get; set; }
 }

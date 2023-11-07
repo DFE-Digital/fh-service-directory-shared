@@ -1,10 +1,8 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
-#pragma warning disable CS8604
-#pragma warning disable CS8607
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record CostOptionDto : ServiceDtoBase<long>
+public record CostOptionDto : ServiceDtoBase
 {
     public DateTime? ValidFrom { get; set; }
     public DateTime? ValidTo { get; set; }
