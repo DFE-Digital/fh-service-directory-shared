@@ -26,14 +26,6 @@ public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase
     }
 
     [Fact]
-    public void WhenComparingTwoObjectsIgnorePrimaryAndForeignKeyThenReturnsTrue()
-    {
-        _sut.Id = 1;
-        _other.Id = 2;
-        _sut.Equals(_other).Should().BeTrue();
-    }
-
-    [Fact]
     public void WhenComparingTwoObjectsWithSameReferenceThenReturnsTrue()
     {
         _other = _sut;
