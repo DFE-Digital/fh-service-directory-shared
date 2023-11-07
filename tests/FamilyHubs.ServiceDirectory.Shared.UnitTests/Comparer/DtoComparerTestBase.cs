@@ -22,7 +22,7 @@ public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase
     [Fact]
     public void WhenComparingTwoObjectsWithSameValuesThenReturnsTrue()
     {
-        _sut.Equals(_other).Should().BeTrue();
+        _sut.Should().BeEquivalentTo(_other);
     }
 
     [Fact]
