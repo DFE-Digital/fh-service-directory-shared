@@ -1,8 +1,6 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 
-public record ServiceDtoBase<TId> : DtoBase<TId>
+public record ServiceDtoBase : DtoBase
 {
-#pragma warning disable CS8618
-    public TId ServiceId { get; set; }
-#pragma warning restore CS8618
+    public long ServiceId { get; set; }
 }

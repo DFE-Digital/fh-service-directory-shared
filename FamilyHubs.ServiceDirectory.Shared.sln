@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyHubs.ServiceDirectory
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3B0374C4-6B6E-4F6B-9C9F-97BF9E0224F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyHubs.ServiceDirectory.Shared.UnitTests", "tests\FamilyHubs.ServiceDirectory.Shared.UnitTests\FamilyHubs.ServiceDirectory.Shared.UnitTests.csproj", "{7F682399-4ED9-4692-80DD-2C845DE480FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyHubs.ServiceDirectory.Shared.UnitTests", "tests\FamilyHubs.ServiceDirectory.Shared.UnitTests\FamilyHubs.ServiceDirectory.Shared.UnitTests.csproj", "{7F682399-4ED9-4692-80DD-2C845DE480FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC679BD4-2226-4148-9B9E-4C5097DE49C6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

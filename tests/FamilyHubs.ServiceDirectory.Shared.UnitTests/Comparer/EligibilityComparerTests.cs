@@ -18,6 +18,5 @@ public class EligibilityComparerTests : DtoComparerTestBase<EligibilityDto, int>
         MinimumAge = 0
     }, dto => dto.MaximumAge)
     {
-
     }
 }

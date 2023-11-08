@@ -1,8 +1,7 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 
-public record OrganisationDtoBase<TId> : DtoBase<TId>
+//todo: these BaseDto's (apart from DtoBase) effectively add a foreign key, but it's confusing to use inheritance, which should be a is-a relationship
+public record OrganisationDtoBase : DtoBase
 {
-#pragma warning disable CS8618
-    public TId OrganisationId { get; set; }
-#pragma warning restore CS8618
+    public long OrganisationId { get; set; }
 }

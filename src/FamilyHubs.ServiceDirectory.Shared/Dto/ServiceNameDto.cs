@@ -2,7 +2,7 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record AccessibilityForDisabilitiesDto : LocationDtoBase
+public record ServiceNameDto : DtoBase
 {
-    public string? Accessibility { get; set; }
+    public required string Name { get; set; }
 }

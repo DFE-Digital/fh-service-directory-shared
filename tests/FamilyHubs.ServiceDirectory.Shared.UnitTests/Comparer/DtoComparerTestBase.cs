@@ -6,7 +6,7 @@ using Xunit;
 
 namespace FamilyHubs.ServiceDirectory.Shared.UnitTests.Comparer;
 
-public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase<long>
+public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase
 {
     private readonly T _sut;
     private T _other;
@@ -22,15 +22,7 @@ public abstract class DtoComparerTestBase<T, TPropertyType> where T : DtoBase<lo
     [Fact]
     public void WhenComparingTwoObjectsWithSameValuesThenReturnsTrue()
     {
-        _sut.Equals(_other).Should().BeTrue();
-    }
-
-    [Fact]
-    public void WhenComparingTwoObjectsIgnorePrimaryAndForeignKeyThenReturnsTrue()
-    {
-        _sut.Id = 1;
-        _other.Id = 2;
-        _sut.Equals(_other).Should().BeTrue();
+        _sut.Should().BeEquivalentTo(_other);
     }
 
     [Fact]
