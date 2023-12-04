@@ -5,7 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record EligibilityDto : ServiceDtoBase
 {
-    public EligibilityType EligibilityType { get; set; }
+    public EligibilityType? EligibilityType { get; set; }
     public required int MaximumAge { get; set; }
     public required int MinimumAge { get; set; }
 }
