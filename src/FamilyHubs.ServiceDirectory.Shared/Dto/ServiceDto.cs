@@ -13,6 +13,7 @@ public record ServiceDto : OrganisationDtoBase
     public DateTime? AssuredDate { get; set; }
     public required ServiceType ServiceType { get; set; }
     public ServiceStatusType Status { get; set; }
+    public string? InterpretationServices { get; set; }
     public DeliverableType DeliverableType { get; set; }
     public AttendingType AttendingType { get; set; }
     public AttendingAccessType AttendingAccess { get; set; }
