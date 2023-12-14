@@ -8,14 +8,15 @@ public class LanguageComparerTests : DtoComparerTestBase<LanguageDto, string>
     {
         Id = 0,
         ServiceId = 0,
-        Name = "Test",
+        Name = "English",
+        Code = "en"
     }, new LanguageDto
     {
         Id = 0,
         ServiceId = 0,
-        Name = "Test",
+        Name = "English",
+        Code = "en"
     }, dto => dto.Name)
     {
-
     }
 }
