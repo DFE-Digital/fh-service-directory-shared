@@ -10,7 +10,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Factories;
 
 public static class LanguageDtoFactory
 {
-    private static readonly IReadOnlyDictionary<string, string> CodeToName
+    public static readonly IReadOnlyDictionary<string, string> CodeToName
         = new ReadOnlyDictionary<string, string>(new Dictionary<string, string> {
             { "ab", "Abkhazian" },
             { "aa", "Afar" },
@@ -197,6 +197,9 @@ public static class LanguageDtoFactory
             { "zu", "Zulu" }
         });
 
+    public static readonly IReadOnlyDictionary<string, string> NameToCode
+        = new ReadOnlyDictionary<string, string>(CodeToName.ToDictionary(kvp => kvp.Value, kvp => kvp.Key));
+
     public static LanguageDto Create(string code)
     {
         return new LanguageDto
@@ -209,5 +212,10 @@ public static class LanguageDtoFactory
     public static string GetName(string code)
     {
         return CodeToName[code];
+    }
+
+    public static string GetCode(string name)
+    {
+        return NameToCode[name];
     }
 }
