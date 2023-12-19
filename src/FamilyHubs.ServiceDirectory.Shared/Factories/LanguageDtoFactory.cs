@@ -10,6 +10,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Factories;
 
 public static class LanguageDtoFactory
 {
+    //todo: these belong outside of this factory
     public static readonly IReadOnlyDictionary<string, string> CodeToName
         = new ReadOnlyDictionary<string, string>(new Dictionary<string, string> {
             { "ab", "Abkhazian" },
