@@ -1,9 +1,12 @@
 ﻿// ReSharper disable StringLiteralTypo
+using System.Collections.ObjectModel;
+
 namespace FamilyHubs.ServiceDirectory.Shared.Models;
 
 public static class StaticData
 {
-    public static readonly IReadOnlyDictionary<string, string> AuthorityCache = new Dictionary<string, string>
+    public static readonly IReadOnlyDictionary<string, string> AuthorityCache =
+        new ReadOnlyDictionary<string, string>(new Dictionary<string, string>
     {
         //E06000001 = codes.admin_district
             {"E06000001", "Hartlepool"},
@@ -386,5 +389,5 @@ public static class StaticData
             {"W06000022", "Newport,Casnewydd"},
             {"W06000023", "Powys,Powys"},
             {"W06000024", "Merthyr Tydfil,Merthyr Tudful"}
-        };
+        });
 }
