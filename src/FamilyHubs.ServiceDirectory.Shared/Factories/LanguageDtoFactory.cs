@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Factories;
-// the internation OR standard doesn't have a languages table with a language id
+// the international OR standard doesn't have a languages table with a language id
 // that services and locations can refer to, instead it has a languages table
 // with (optional) foreign keys to service or location, which means we're responsible
 // for ensuring language codes and names are consistent (and languages will be repeated)!
