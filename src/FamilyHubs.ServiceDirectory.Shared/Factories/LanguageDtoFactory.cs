@@ -10,6 +10,20 @@ namespace FamilyHubs.ServiceDirectory.Shared.Factories;
 
 public static class LanguageDtoFactory
 {
+    public static readonly ReadOnlyCollection<string> FilterLanguageCodes
+        = new(new List<string>
+        {
+            "af", "sq", "ar", "hy", "eu", "bn", "bg", "ca", "km", "zh",
+            "hr", "cs", "da", "nl", "en", "et", "fj", "fi", "fr", "ka",
+            "de", "el", "gu", "he", "hi", "hu", "is", "id", "ga", "it",
+            "ja", "jv", "ko", "la", "lv", "lt", "mk", "ms", "ml", "mt",
+            "mi", "mr", "mn", "ne", "no", "fa", "pl", "pt", "pa", "qu",
+            "ro", "ru", "sm", "sr", "sk", "sl", "so", "es", "sw", "sv",
+            "ta", "tt", "te", "th", "bo", "to", "tr", "uk", "ur", "uz",
+            "vi", "cy", "xh"
+        });
+
+
     //todo: these belong outside of this factory
     public static readonly IReadOnlyDictionary<string, string> CodeToName
         = new ReadOnlyDictionary<string, string>(new Dictionary<string, string> {
