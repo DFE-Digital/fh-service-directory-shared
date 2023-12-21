@@ -22,6 +22,7 @@ public static class Languages
             "vi", "cy", "xh"
         });
 
+    // list taken from https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes#References
     public static readonly IReadOnlyDictionary<string, string> CodeToName
         = new ReadOnlyDictionary<string, string>(new Dictionary<string, string> {
             { "ab", "Abkhazian" },
@@ -156,7 +157,7 @@ public static class Languages
             { "ro", "Romanian; Moldavian; Moldovan" },
             { "rm", "Romansh" },
             { "rn", "Rundi" },
-            { "ru", "Ruzzian" },
+            { "ru", "Russian" },
             { "sm", "Samoan" },
             { "sg", "Sango" },
             { "sa", "Sanskrit" },
