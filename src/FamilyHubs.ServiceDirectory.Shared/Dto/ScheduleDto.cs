@@ -3,7 +3,7 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record RegularScheduleDto : DtoBase
+public record ScheduleDto : DtoBase
 {
     public DayOfWeek? Weekday { get; set; }
     public DateTime? OpensAt { get; set; }
