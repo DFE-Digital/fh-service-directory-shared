@@ -27,8 +27,7 @@ public record ServiceDto : OrganisationDtoBase
     public ICollection<ServiceAreaDto> ServiceAreas { get; set; } = new List<ServiceAreaDto>();
     public ICollection<LocationDto> Locations { get; set; } = new List<LocationDto>();
     public ICollection<TaxonomyDto> Taxonomies { get; set; } = new List<TaxonomyDto>();
-    public ICollection<RegularScheduleDto> RegularSchedules { get; set; } = new List<RegularScheduleDto>();
-    public ICollection<HolidayScheduleDto> HolidaySchedules { get; set; } = new List<HolidayScheduleDto>();
+    public ICollection<ScheduleDto> Schedules { get; set; } = new List<ScheduleDto>();
     public ICollection<ReviewDto> Reviews { get; set; } = new List<ReviewDto>();
     public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
 }

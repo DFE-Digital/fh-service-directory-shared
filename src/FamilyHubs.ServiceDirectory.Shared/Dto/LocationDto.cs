@@ -19,7 +19,6 @@ public record LocationDto : DtoBase
     public double? Distance { get; set; }
 
     public ICollection<AccessibilityForDisabilitiesDto> AccessibilityForDisabilities { get; set; } = new List<AccessibilityForDisabilitiesDto>();
-    public ICollection<RegularScheduleDto> RegularSchedules { get; set; } = new List<RegularScheduleDto>();
-    public ICollection<HolidayScheduleDto> HolidaySchedules { get; set; } = new List<HolidayScheduleDto>();
+    public ICollection<ScheduleDto> Schedules { get; set; } = new List<ScheduleDto>();
     public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
 }
