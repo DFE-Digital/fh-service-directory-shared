@@ -6,13 +6,11 @@ public class ScheduleComparerTests : DtoComparerTestBase<ScheduleDto, DateTime?>
 {
     public ScheduleComparerTests() : base(new ScheduleDto
     {
-        Id = 0,
-        Weekday = DayOfWeek.Sunday,
+        Id = 0,        
         OpensAt = new DateTime(2023, 1, 1),
     }, new ScheduleDto
     {
-        Id = 0,
-        Weekday = DayOfWeek.Sunday,
+        Id = 0,        
         OpensAt = new DateTime(2023, 1, 1),
     }, dto => dto.OpensAt)
     {
