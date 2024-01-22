@@ -17,19 +17,20 @@ public static class DisplayExtensions
             return Enumerable.Empty<string>();
 
         var weekdaysAndWeekends = GetWeekdaysAndWeekends(schedules).ToArray();
-        var timeDescription = GetTimeDescription(schedules);
+        var timeDescription = GetTimeDescription(schedules).ToArray();
 
         bool hasWeekdaysAndWeekends = weekdaysAndWeekends.Length > 0;
+        bool hasTimeDescription = timeDescription.Length > 0;
 
-        if (!hasWeekdaysAndWeekends && timeDescription == null)
+        if (!hasWeekdaysAndWeekends && !hasTimeDescription)
             return Enumerable.Empty<string>();
 
-        if (hasWeekdaysAndWeekends && timeDescription != null)
+        if (hasWeekdaysAndWeekends && hasTimeDescription)
         {
-            return weekdaysAndWeekends.Append("").Append(timeDescription);
+            return weekdaysAndWeekends.Append("").Concat(timeDescription);
         }
 
-        return hasWeekdaysAndWeekends ? weekdaysAndWeekends : new[] { timeDescription! };
+        return hasWeekdaysAndWeekends ? weekdaysAndWeekends : timeDescription;
     }
 
     public static IEnumerable<string> GetWeekdaysAndWeekends(this ServiceDto service)
@@ -67,13 +68,11 @@ public static class DisplayExtensions
         return $"{dayType}: {schedule.OpensAt:h:mmtt} to {schedule.ClosesAt:h:mmtt}";
     }
 
-    public static string? GetTimeDescription(this ServiceDto service)
+    public static IEnumerable<string> GetTimeDescription(this ICollection<ScheduleDto> schedules)
     {
-        return service.Schedules.GetTimeDescription();
-    }
-
-    public static string? GetTimeDescription(this ICollection<ScheduleDto> schedules)
-    {
-        return schedules.FirstOrDefault(x => x.Description != null)?.Description;
+        return schedules
+            .FirstOrDefault(x => x.Description != null)?.Description?
+            .Split("\r\n")
+               ?? Enumerable.Empty<string>();
     }
 }
