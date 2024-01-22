@@ -68,11 +68,21 @@ public static class DisplayExtensions
         return $"{dayType}: {schedule.OpensAt:h:mmtt} to {schedule.ClosesAt:h:mmtt}";
     }
 
+    public static IEnumerable<string> GetTimeDescription(this ServiceDto service)
+    {
+        return service.Schedules.GetTimeDescription();
+    }
+
     public static IEnumerable<string> GetTimeDescription(this ICollection<ScheduleDto> schedules)
     {
-        return schedules
+        // data created/updated through the UI has \r\n for the line break
+        // data imported through the spreadsheet has just \n for the line break
+
+        string? description = schedules
             .FirstOrDefault(x => x.Description != null)?.Description?
-            .Split("\r\n")
+            .Replace("\r", "");
+
+        return description?.Split("\n")
                ?? Enumerable.Empty<string>();
     }
 }
