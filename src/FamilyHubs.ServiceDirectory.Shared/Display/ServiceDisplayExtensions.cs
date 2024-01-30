@@ -3,7 +3,7 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Display;
 
-public static class DisplayExtensions
+public static class ServiceDisplayExtensions
 {
     public static IEnumerable<string> GetServiceAvailability(this ServiceDto service)
     {
