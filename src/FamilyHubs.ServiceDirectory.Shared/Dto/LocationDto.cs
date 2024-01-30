@@ -6,10 +6,10 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 public record LocationDto : DtoBase
 {
     public required LocationType LocationType { get; set; }
-    public required string Name { get; set; }
+    public string? Name { get; set; }
     public string? Description { get; set; }
-    public required double Latitude { get; set; }
-    public required double Longitude { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
     public required string Address1 { get; set; }
     public string? Address2 { get; set; }
     public required string City { get; set; }
