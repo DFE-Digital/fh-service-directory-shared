@@ -148,7 +148,7 @@ public class ServiceDtoExtensionTests
             new LocationDto
             {
                 Id = Random.Shared.Next(),
-                LocationType = LocationType.NotSet,
+                LocationTypeCategory = LocationTypeCategory.NotSet,
                 Name = "",
                 Latitude = 0,
                 Longitude = 0,
@@ -157,7 +157,8 @@ public class ServiceDtoExtensionTests
                 PostCode = "",
                 StateProvince = "",
                 Country = "",
-                Contacts = new List<ContactDto>()
+                Contacts = new List<ContactDto>(),
+                LocationType=LocationType.Physical
             }
         };
 
@@ -230,7 +231,7 @@ public class ServiceDtoExtensionTests
             new LocationDto
             {
                 Id = Random.Shared.Next(),
-                LocationType = LocationType.NotSet,
+                LocationTypeCategory = LocationTypeCategory.NotSet,
                 Name = "",
                 Latitude = 0,
                 Longitude = 0,
@@ -246,7 +247,8 @@ public class ServiceDtoExtensionTests
                         Id = contactId,
                         Telephone = "9876"
                     }
-                }
+                },
+                LocationType=LocationType.Physical
             }
         };
 

@@ -2,6 +2,7 @@
 
 public enum LocationType
 {
-    NotSet    = 0,
-    FamilyHub = 1
+    Physical = 0,
+    Postal = 1,
+    Virtual = 2
 }

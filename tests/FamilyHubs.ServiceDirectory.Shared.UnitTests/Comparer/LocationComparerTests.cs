@@ -11,7 +11,7 @@ public class LocationComparerTests : DtoComparerTestBase<LocationDto, string>
     {
         Id = 0,
         Name = "Test",
-        LocationType = LocationType.NotSet,
+        LocationTypeCategory = LocationTypeCategory.NotSet,
         Latitude = 0,
         Longitude = 0,
         Address1 = "Test",
@@ -19,11 +19,12 @@ public class LocationComparerTests : DtoComparerTestBase<LocationDto, string>
         PostCode = "Test",
         StateProvince = "Test",
         Country = "Test",
+        LocationType= LocationType.Physical
     }, new LocationDto
     {
         Id = 0,
         Name = "Test",
-        LocationType = LocationType.NotSet,
+        LocationTypeCategory = LocationTypeCategory.NotSet,
         Latitude = 0,
         Longitude = 0,
         Address1 = "Test",
@@ -31,6 +32,7 @@ public class LocationComparerTests : DtoComparerTestBase<LocationDto, string>
         PostCode = "Test",
         StateProvince = "Test",
         Country = "Test",
+        LocationType= LocationType.Physical
     }, dto => dto.Name)
     {
 
