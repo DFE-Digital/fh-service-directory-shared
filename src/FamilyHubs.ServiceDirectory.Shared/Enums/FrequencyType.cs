@@ -2,7 +2,11 @@
 
 public enum FrequencyType
 {
-    NotSet = 0,
-    Weekly = 1,
-    Monthly = 2,
+    SECONDLY,
+    MINUTELY,
+    HOURLY,
+    DAILY,
+    WEEKLY,
+    MONTHLY,
+    YEARLY
 }
