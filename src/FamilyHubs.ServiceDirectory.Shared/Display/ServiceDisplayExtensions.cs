@@ -5,6 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Display;
 
 public static class ServiceDisplayExtensions
 {
+    //todo: this lot is going to change
     public static IEnumerable<string> GetServiceAvailability(this ServiceDto service)
     {
         return service.Schedules.GetServiceAvailability();
