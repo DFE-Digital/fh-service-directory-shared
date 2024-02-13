@@ -1,145 +1,100 @@
-//todo: reinstate tests once spec is finalised
-//using Xunit;
-//using FamilyHubs.ServiceDirectory.Shared.Dto;
-//using FamilyHubs.ServiceDirectory.Shared.Enums;
-//using FamilyHubs.ServiceDirectory.Shared.Display;
+using Xunit;
+using FamilyHubs.ServiceDirectory.Shared.Dto;
+using FamilyHubs.ServiceDirectory.Shared.Enums;
+using FamilyHubs.ServiceDirectory.Shared.Display;
 
-////todo: more and better needed
-//public class DisplayExtensionsTests
-//{
-//    public ServiceDto ServiceDto { get; set; }
-    
-//    public DisplayExtensionsTests()
-//    {
-//        ServiceDto = new ServiceDto
-//        {
-//            Id = Random.Shared.Next(),
-//            ServiceType = ServiceType.NotSet,
-//            OrganisationId = Random.Shared.Next(),
-//            Name = "TestService",
-//            ServiceOwnerReferenceId = "serviceId1"
-//        };
-//    }
+//todo: more and better needed
+public class DisplayExtensionsTests
+{
+    public ServiceDto ServiceDto { get; set; }
 
-//    [Fact]
-//    public void GetServiceAvailability_ReturnsExpectedResult()
-//    {
-//        // Arrange
-//        ServiceDto.Schedules = new List<ScheduleDto>
-//        {
-//            new()
-//            {
-//                Freq = FrequencyType.Weekly, ByDay = "MO,TU,WE,TH,FR",
-//                OpensAt = DateTime.Today.AddHours(9),
-//                ClosesAt = DateTime.Today.AddHours(17)
-//            },
-//            new()
-//            {
-//                Freq = FrequencyType.Weekly, ByDay = "SA,SU",
-//                OpensAt = DateTime.Today.AddHours(10),
-//                ClosesAt = DateTime.Today.AddHours(16)
-//            }
-//        };
+    public DisplayExtensionsTests()
+    {
+        ServiceDto = new ServiceDto
+        {
+            Id = Random.Shared.Next(),
+            ServiceType = ServiceType.NotSet,
+            OrganisationId = Random.Shared.Next(),
+            Name = "TestService",
+            ServiceOwnerReferenceId = "serviceId1"
+        };
+    }
 
-//        // Act
-//        var result = ServiceDto.GetServiceAvailability();
+    [Fact]
+    public void GetServiceAvailability_ReturnsExpectedResult()
+    {
+        // Arrange
+        ServiceDto.Schedules = new List<ScheduleDto>
+        {
+            new()
+            {
+                Freq = FrequencyType.WEEKLY, ByDay = "MO,TU,WE,TH,FR"
+            },
+        };
 
-//        // Assert
-//        Assert.NotNull(result);
-//        Assert.Equal(2, result.Count());
-//    }
+        // Act
+        var result = ServiceDto.GetServiceAvailability();
 
-//    [Fact]
-//    public void GetServiceAvailabilityScheduleAndDescription_ReturnsExpectedResult()
-//    {
-//        // Arrange
-//        ServiceDto.Schedules = new List<ScheduleDto>
-//        {
-//            new()
-//            {
-//                Freq = FrequencyType.Weekly, ByDay = "MO,TU,WE,TH,FR",
-//                OpensAt = DateTime.Today.AddHours(9),
-//                ClosesAt = DateTime.Today.AddHours(17)
-//            },
-//            new()
-//            {
-//                Freq = FrequencyType.Weekly, ByDay = "SA,SU",
-//                OpensAt = DateTime.Today.AddHours(10),
-//                ClosesAt = DateTime.Today.AddHours(16)
-//            },
-//            new()
-//            {
-//                Description = "Abc"
-//            }
-//        };
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(1, result.Count());
+    }
 
-//        // Act
-//        var result = ServiceDto.GetServiceAvailability();
+    [Fact]
+    public void GetServiceAvailabilityScheduleAndDescription_ReturnsExpectedResult()
+    {
+        // Arrange
+        ServiceDto.Schedules = new List<ScheduleDto>
+        {
+            new()
+            {
+                Freq = FrequencyType.WEEKLY, ByDay = "MO,SU"
+            },
+            new()
+            {
+                Description = "Abc"
+            }
+        };
 
-//        // Assert
-//        Assert.NotNull(result);
-//        Assert.Equal(4, result.Count());
-//    }
+        // Act
+        var result = ServiceDto.GetServiceAvailability();
 
-//    [Fact]
-//    public void GetWeekdaysAndWeekends_ReturnsExpectedResult()
-//    {
-//        // Arrange
-//        ServiceDto.Schedules = new List<ScheduleDto>
-//        {
-//            new()
-//            {
-//                Freq = FrequencyType.Weekly, ByDay = "MO,TU,WE,TH,FR",
-//                OpensAt = DateTime.Today.AddHours(9),
-//                ClosesAt = DateTime.Today.AddHours(17)
-//            },
-//            new()
-//            {
-//                Freq = FrequencyType.Weekly, ByDay = "SA,SU",
-//                OpensAt = DateTime.Today.AddHours(10),
-//                ClosesAt = DateTime.Today.AddHours(16)
-//            }
-//        };
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(3, result.Count());
+    }
 
-//        // Act
-//        var result = ServiceDto.GetWeekdaysAndWeekends();
+    [Fact]
+    public void GetTimeDescription_ReturnsExpectedResult()
+    {
+        // Arrange
+        var schedules = new List<ScheduleDto>
+        {
+            new() { Description = "9:00AM to 5:00PM\r\n10:00AM to 4:00PM" }
+        };
 
-//        // Assert
-//        Assert.NotNull(result);
-//        Assert.Equal(2, result.Count());
-//    }
+        // Act
+        var result = schedules.GetTimeDescription();
 
-//    [Fact]
-//    public void GetTimeDescription_ReturnsExpectedResult()
-//    {
-//        // Arrange
-//        var schedules = new List<ScheduleDto>
-//        {
-//            new() { Description = "9:00AM to 5:00PM\r\n10:00AM to 4:00PM" }
-//        };
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(2, result.Count());
+    }
 
-//        // Act
-//        var result = schedules.GetTimeDescription();
+    [Fact]
+    public void GetTimeDescription_SpreadsheetData_ReturnsExpectedResult()
+    {
+        // Arrange
+        var schedules = new List<ScheduleDto>
+        {
+            new() { Description = "9:00AM to 5:00PM\n10:00AM to 4:00PM" }
+        };
 
-//        // Assert
-//        Assert.NotNull(result);
-//        Assert.Equal(2, result.Count());
-//    }
+        // Act
+        var result = schedules.GetTimeDescription();
 
-//    [Fact]
-//    public void GetTimeDescription_SpreadsheetData_ReturnsExpectedResult()
-//    {
-//        // Arrange
-//        var schedules = new List<ScheduleDto>
-//        {
-//            new() { Description = "9:00AM to 5:00PM\n10:00AM to 4:00PM" }
-//        };
-
-//        // Act
-//        var result = schedules.GetTimeDescription();
-
-//        // Assert
-//        Assert.NotNull(result);
-//        Assert.Equal(2, result.Count());
-//    }
-//}
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(2, result.Count());
+    }
+}

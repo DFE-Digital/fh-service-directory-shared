@@ -19,23 +19,28 @@ public static class ServiceDisplayExtensions
         var dayNames = schedules
             !.FirstOrDefault(s => s.Freq == FrequencyType.WEEKLY)
             ?.ByDay?.Split(",")
-            .Select(c => Calendar.DayCodeToName[c])
-            .ToList();
-
-        var timeDescription = GetTimeDescription(schedules);
+            .Select(c => Calendar.DayCodeToName[c]);
 
         bool hasDayNames = dayNames?.Any() == true;
+
+        var timeDescription = GetTimeDescription(schedules);
         bool hasTimeDescription = timeDescription.Any();
 
         if (!hasDayNames && !hasTimeDescription)
             return Enumerable.Empty<string>();
 
-        if (hasDayNames && hasTimeDescription)
+        if (hasDayNames)
         {
-            return dayNames!.Append("").Concat(timeDescription);
+            dayNames = new[] { string.Join(", ", dayNames!) };
+            if (hasTimeDescription)
+            {
+                dayNames = dayNames.Append("").Concat(timeDescription);
+            }
+
+            return dayNames;
         }
 
-        return hasDayNames ? dayNames! : timeDescription;
+        return timeDescription;
     }
 
     public static IEnumerable<string> GetTimeDescription(this ServiceDto service)
