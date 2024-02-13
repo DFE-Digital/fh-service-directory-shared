@@ -1,5 +1,6 @@
 ﻿using FamilyHubs.ServiceDirectory.Shared.Dto;
 using FamilyHubs.ServiceDirectory.Shared.Enums;
+using FamilyHubs.ServiceDirectory.Shared.ReferenceData.ICalendar;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Display;
 
@@ -15,56 +16,31 @@ public static class ServiceDisplayExtensions
         if (schedules == null || schedules.Count == 0)
             return Enumerable.Empty<string>();
 
-        var weekdaysAndWeekends = GetWeekdaysAndWeekends(schedules).ToArray();
-        var timeDescription = GetTimeDescription(schedules).ToArray();
+        var dayNames = schedules
+            !.FirstOrDefault(s => s.Freq == FrequencyType.WEEKLY)
+            ?.ByDay?.Split(",")
+            .Select(c => Calendar.DayCodeToName[c]);
 
-        bool hasWeekdaysAndWeekends = weekdaysAndWeekends.Length > 0;
-        bool hasTimeDescription = timeDescription.Length > 0;
+        bool hasDayNames = dayNames?.Any() == true;
 
-        if (!hasWeekdaysAndWeekends && !hasTimeDescription)
+        var timeDescription = GetTimeDescription(schedules);
+        bool hasTimeDescription = timeDescription.Any();
+
+        if (!hasDayNames && !hasTimeDescription)
             return Enumerable.Empty<string>();
 
-        if (hasWeekdaysAndWeekends && hasTimeDescription)
+        if (hasDayNames)
         {
-            return weekdaysAndWeekends.Append("").Concat(timeDescription);
+            dayNames = new[] { string.Join(", ", dayNames!) };
+            if (hasTimeDescription)
+            {
+                dayNames = dayNames.Append("").Concat(timeDescription);
+            }
+
+            return dayNames;
         }
 
-        return hasWeekdaysAndWeekends ? weekdaysAndWeekends : timeDescription;
-    }
-
-    public static IEnumerable<string> GetWeekdaysAndWeekends(this ServiceDto service)
-    {
-        return service.Schedules.GetWeekdaysAndWeekends();
-    }
-
-    public static IEnumerable<string> GetWeekdaysAndWeekends(this ICollection<ScheduleDto> schedules)
-    {
-        return schedules
-            .Select(ScheduleDescription)
-            .Where(d => !string.IsNullOrEmpty(d))!;
-    }
-
-    private static string? ScheduleDescription(ScheduleDto schedule)
-    {
-        if (schedule.Freq != FrequencyType.Weekly)
-        {
-            return null;
-        }
-
-        string dayType;
-        switch (schedule.ByDay)
-        {
-            case "MO,TU,WE,TH,FR":
-                dayType = "Weekdays";
-                break;
-            case "SA,SU":
-                dayType = "Weekends";
-                break;
-            default:
-                return null;
-        }
-
-        return $"{dayType}: {schedule.OpensAt:h:mmtt} to {schedule.ClosesAt:h:mmtt}";
+        return timeDescription;
     }
 
     public static IEnumerable<string> GetTimeDescription(this ServiceDto service)

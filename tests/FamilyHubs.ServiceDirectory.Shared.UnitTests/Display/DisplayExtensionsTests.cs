@@ -7,7 +7,7 @@ using FamilyHubs.ServiceDirectory.Shared.Display;
 public class DisplayExtensionsTests
 {
     public ServiceDto ServiceDto { get; set; }
-    
+
     public DisplayExtensionsTests()
     {
         ServiceDto = new ServiceDto
@@ -28,16 +28,8 @@ public class DisplayExtensionsTests
         {
             new()
             {
-                Freq = FrequencyType.Weekly, ByDay = "MO,TU,WE,TH,FR",
-                OpensAt = DateTime.Today.AddHours(9),
-                ClosesAt = DateTime.Today.AddHours(17)
+                Freq = FrequencyType.WEEKLY, ByDay = "MO,TU,WE,TH,FR"
             },
-            new()
-            {
-                Freq = FrequencyType.Weekly, ByDay = "SA,SU",
-                OpensAt = DateTime.Today.AddHours(10),
-                ClosesAt = DateTime.Today.AddHours(16)
-            }
         };
 
         // Act
@@ -45,7 +37,7 @@ public class DisplayExtensionsTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(2, result.Count());
+        Assert.Equal(1, result.Count());
     }
 
     [Fact]
@@ -56,15 +48,7 @@ public class DisplayExtensionsTests
         {
             new()
             {
-                Freq = FrequencyType.Weekly, ByDay = "MO,TU,WE,TH,FR",
-                OpensAt = DateTime.Today.AddHours(9),
-                ClosesAt = DateTime.Today.AddHours(17)
-            },
-            new()
-            {
-                Freq = FrequencyType.Weekly, ByDay = "SA,SU",
-                OpensAt = DateTime.Today.AddHours(10),
-                ClosesAt = DateTime.Today.AddHours(16)
+                Freq = FrequencyType.WEEKLY, ByDay = "MO,SU"
             },
             new()
             {
@@ -77,35 +61,7 @@ public class DisplayExtensionsTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(4, result.Count());
-    }
-
-    [Fact]
-    public void GetWeekdaysAndWeekends_ReturnsExpectedResult()
-    {
-        // Arrange
-        ServiceDto.Schedules = new List<ScheduleDto>
-        {
-            new()
-            {
-                Freq = FrequencyType.Weekly, ByDay = "MO,TU,WE,TH,FR",
-                OpensAt = DateTime.Today.AddHours(9),
-                ClosesAt = DateTime.Today.AddHours(17)
-            },
-            new()
-            {
-                Freq = FrequencyType.Weekly, ByDay = "SA,SU",
-                OpensAt = DateTime.Today.AddHours(10),
-                ClosesAt = DateTime.Today.AddHours(16)
-            }
-        };
-
-        // Act
-        var result = ServiceDto.GetWeekdaysAndWeekends();
-
-        // Assert
-        Assert.NotNull(result);
-        Assert.Equal(2, result.Count());
+        Assert.Equal(3, result.Count());
     }
 
     [Fact]

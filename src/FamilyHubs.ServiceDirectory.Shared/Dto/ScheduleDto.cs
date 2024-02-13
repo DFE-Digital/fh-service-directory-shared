@@ -10,7 +10,7 @@ public record ScheduleDto : DtoBase
     public DateTime? ValidFrom { get; set; }
     public DateTime? ValidTo { get; set; }
     public string? DtStart { get; set; }
-    public FrequencyType Freq { get; set; }
+    public FrequencyType? Freq { get; set; }
     public int? Interval { get; set; }
     public string? ByDay { get; set; }
     public string? ByMonthDay { get; set; }
