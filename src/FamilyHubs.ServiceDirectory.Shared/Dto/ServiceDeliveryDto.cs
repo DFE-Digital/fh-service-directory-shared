@@ -6,5 +6,5 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 public record ServiceDeliveryDto : ServiceDtoBase
 {
     //todo: why is the delivery type property called Name?
-    public ServiceDeliveryType Name { get; set; }
+    public AttendingType Name { get; set; }
 }

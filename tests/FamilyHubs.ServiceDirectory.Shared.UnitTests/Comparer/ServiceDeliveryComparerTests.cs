@@ -9,14 +9,13 @@ public class ServiceDeliveryComparerTests : DtoComparerTestBase<ServiceDeliveryD
     {
         Id = 0,
         ServiceId = 0,
-        Name = ServiceDeliveryType.Online,
+        Name = AttendingType.Online,
     }, new ServiceDeliveryDto
     {
         Id = 0,
         ServiceId = 0,
-        Name = ServiceDeliveryType.Online,
+        Name = AttendingType.Online,
     }, dto => dto.Name)
     {
-
     }
 }
