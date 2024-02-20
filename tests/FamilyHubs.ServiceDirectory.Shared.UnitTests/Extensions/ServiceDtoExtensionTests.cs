@@ -38,9 +38,9 @@ public class ServiceDtoExtensionTests
     }
 
     [Theory]
-    [InlineData(ServiceDeliveryType.Telephone)]
-    [InlineData(ServiceDeliveryType.Online)]
-    public void GetContactShouldReturnNullWhenServiceLinkContactsIsNull(ServiceDeliveryType serviceDeliveryType)
+    [InlineData(AttendingType.Telephone)]
+    [InlineData(AttendingType.Online)]
+    public void GetContactShouldReturnNullWhenServiceLinkContactsIsNull(AttendingType serviceDeliveryType)
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
@@ -57,9 +57,9 @@ public class ServiceDtoExtensionTests
     }
 
     [Theory]
-    [InlineData(ServiceDeliveryType.Telephone)]
-    [InlineData(ServiceDeliveryType.Online)]
-    public void GetContactShouldReturnNullWhenServiceLinkContactsIsEmpty(ServiceDeliveryType serviceDeliveryType)
+    [InlineData(AttendingType.Telephone)]
+    [InlineData(AttendingType.Online)]
+    public void GetContactShouldReturnNullWhenServiceLinkContactsIsEmpty(AttendingType serviceDeliveryType)
     {
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
         {
@@ -85,7 +85,7 @@ public class ServiceDtoExtensionTests
             {
                 Id = Random.Shared.Next(),
                 ServiceId = Random.Shared.Next(),
-                Name = ServiceDeliveryType.InPerson
+                Name = AttendingType.InPerson
             }
         };
 
@@ -102,7 +102,7 @@ public class ServiceDtoExtensionTests
             {
                 Id = Random.Shared.Next(),
                 ServiceId = Random.Shared.Next(),
-                Name = ServiceDeliveryType.InPerson
+                Name = AttendingType.InPerson
             }
         };
 
@@ -121,7 +121,7 @@ public class ServiceDtoExtensionTests
             {
                 Id = Random.Shared.Next(),
                 ServiceId = Random.Shared.Next(),
-                Name = ServiceDeliveryType.InPerson
+                Name = AttendingType.InPerson
             }
         };
         ServiceDto.Locations = new List<LocationDto>();
@@ -139,7 +139,7 @@ public class ServiceDtoExtensionTests
             {
                 Id = Random.Shared.Next(),
                 ServiceId = Random.Shared.Next(),
-                Name = ServiceDeliveryType.InPerson
+                Name = AttendingType.InPerson
             }
         };
 
@@ -169,24 +169,16 @@ public class ServiceDtoExtensionTests
     [Fact]
     public void GetContactShouldReturnNullWhenServiceDeliveryTypeIsNotEntered()
     {
-        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
-        {
-            new ServiceDeliveryDto
-            {
-                Id = Random.Shared.Next(),
-                ServiceId = Random.Shared.Next(),
-                Name = ServiceDeliveryType.NotSet
-            }
-        };
+        ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>();
 
         var result = ServiceDto.GetContact();
         Assert.Null(result);
     }
 
     [Theory]
-    [InlineData(ServiceDeliveryType.Telephone)]
-    [InlineData(ServiceDeliveryType.Online)]
-    public void GetContactShouldReturnServiceLinkContactsContact(ServiceDeliveryType serviceDeliveryType)
+    [InlineData(AttendingType.Telephone)]
+    [InlineData(AttendingType.Online)]
+    public void GetContactShouldReturnServiceLinkContactsContact(AttendingType serviceDeliveryType)
     {
         var contactId = Random.Shared.Next();
         ServiceDto.ServiceDeliveries = new List<ServiceDeliveryDto>
@@ -223,7 +215,7 @@ public class ServiceDtoExtensionTests
             {
                 Id = Random.Shared.Next(),
                 ServiceId = Random.Shared.Next(),
-                Name = ServiceDeliveryType.InPerson
+                Name = AttendingType.InPerson
             }
         };
         ServiceDto.Locations = new List<LocationDto>

@@ -15,8 +15,6 @@ public record ServiceDto : OrganisationDtoBase
     public ServiceStatusType Status { get; set; }
     public string? InterpretationServices { get; set; }
     public DeliverableType DeliverableType { get; set; }
-    public AttendingType AttendingType { get; set; }
-    public AttendingAccessType AttendingAccess { get; set; }
     public double? Distance { get; set; }
     public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<ServiceDeliveryDto> ServiceDeliveries { get; set; } = new List<ServiceDeliveryDto>();
