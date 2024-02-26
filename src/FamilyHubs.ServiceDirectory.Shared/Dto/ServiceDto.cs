@@ -3,8 +3,9 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record ServiceDto : OrganisationDtoBase
+public record ServiceDto : DtoBase
 {
+    public required long OrganisationId { get; set; }
     public required string ServiceOwnerReferenceId { get; set; }
     public required string Name { get; set; }
     public string? Description { get; set; }
@@ -26,6 +27,5 @@ public record ServiceDto : OrganisationDtoBase
     public ICollection<LocationDto> Locations { get; set; } = new List<LocationDto>();
     public ICollection<TaxonomyDto> Taxonomies { get; set; } = new List<TaxonomyDto>();
     public ICollection<ScheduleDto> Schedules { get; set; } = new List<ScheduleDto>();
-    public ICollection<ReviewDto> Reviews { get; set; } = new List<ReviewDto>();
     public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
 }
