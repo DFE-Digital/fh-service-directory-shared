@@ -10,6 +10,7 @@ public class LocationComparerTests : DtoComparerTestBase<LocationDto, string>
     public LocationComparerTests() : base(new LocationDto
     {
         Id = 0,
+        OrganisationId = 123,
         Name = "Test",
         LocationTypeCategory = LocationTypeCategory.NotSet,
         Latitude = 0,
@@ -23,6 +24,7 @@ public class LocationComparerTests : DtoComparerTestBase<LocationDto, string>
     }, new LocationDto
     {
         Id = 0,
+        OrganisationId = 123,
         Name = "Test",
         LocationTypeCategory = LocationTypeCategory.NotSet,
         Latitude = 0,

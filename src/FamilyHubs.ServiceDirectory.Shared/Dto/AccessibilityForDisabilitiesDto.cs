@@ -2,7 +2,8 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record AccessibilityForDisabilitiesDto : LocationDtoBase
+public record AccessibilityForDisabilitiesDto : DtoBase
 {
+    public long LocationId { get; set; }
     public string? Accessibility { get; set; }
 }

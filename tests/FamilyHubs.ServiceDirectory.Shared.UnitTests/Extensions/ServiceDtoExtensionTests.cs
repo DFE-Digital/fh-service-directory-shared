@@ -148,6 +148,7 @@ public class ServiceDtoExtensionTests
             new LocationDto
             {
                 Id = Random.Shared.Next(),
+                OrganisationId = 123,
                 LocationTypeCategory = LocationTypeCategory.NotSet,
                 Name = "",
                 Latitude = 0,
@@ -223,6 +224,7 @@ public class ServiceDtoExtensionTests
             new LocationDto
             {
                 Id = Random.Shared.Next(),
+                OrganisationId = 123,
                 LocationTypeCategory = LocationTypeCategory.NotSet,
                 Name = "",
                 Latitude = 0,

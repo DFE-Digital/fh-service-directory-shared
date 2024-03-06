@@ -2,8 +2,9 @@
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
-public record CostOptionDto : ServiceDtoBase
+public record CostOptionDto : DtoBase
 {
+    public long ServiceId { get; set; }
     public DateTime? ValidFrom { get; set; }
     public DateTime? ValidTo { get; set; }
     public string? Option { get; set; }

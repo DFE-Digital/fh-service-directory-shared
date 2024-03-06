@@ -5,6 +5,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto;
 
 public record LocationDto : DtoBase
 {
+    public long? OrganisationId { get; set; }
     public required LocationTypeCategory LocationTypeCategory { get; set; }
     public string? Name { get; set; }
     public string? Description { get; set; }
