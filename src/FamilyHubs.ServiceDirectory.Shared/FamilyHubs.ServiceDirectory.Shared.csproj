@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <VersionPrefix>8.0.0-pre1</VersionPrefix>
+	  <VersionPrefix>8.0.0-pre2</VersionPrefix>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 	  <NoWarn>1701;1702;S1135</NoWarn>

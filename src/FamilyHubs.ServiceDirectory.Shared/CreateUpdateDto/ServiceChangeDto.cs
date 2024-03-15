@@ -4,7 +4,10 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.CreateUpdateDto;
 
-public record ServiceDto : DtoBase
+/// <summary>
+/// A version of the ServiceDto that is used for creating and updating services (as separate operations, not upserting).
+/// </summary>
+public record ServiceChangeDto : DtoBase
 {
     public long OrganisationId { get; set; }
     public required string ServiceOwnerReferenceId { get; set; }
