@@ -4,11 +4,11 @@ using FamilyHubs.ServiceDirectory.Shared.Enums;
 using FamilyHubs.ServiceDirectory.Shared.Display;
 
 //todo: more and better needed
-public class DisplayExtensionsTests
+public class ServiceDisplayExtensionsTests
 {
     public ServiceDto ServiceDto { get; set; }
 
-    public DisplayExtensionsTests()
+    public ServiceDisplayExtensionsTests()
     {
         ServiceDto = new ServiceDto
         {
