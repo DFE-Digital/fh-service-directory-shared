@@ -8,6 +8,7 @@ public record ServiceDto : DtoBase
     public long OrganisationId { get; set; }
     public required string ServiceOwnerReferenceId { get; set; }
     public required string Name { get; set; }
+    public string? Summary { get; set; }
     public string? Description { get; set; }
     public string? Fees { get; set; }
     public string? Accreditations { get; set; }
