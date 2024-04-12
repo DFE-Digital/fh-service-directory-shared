@@ -4,7 +4,6 @@ using Xunit;
 
 namespace FamilyHubs.ServiceDirectory.Shared.UnitTests.Display;
 
-// generate unit tests for the GetDayNames method
 public class DaysDisplayExtensionsTests
 {
     [Fact]
