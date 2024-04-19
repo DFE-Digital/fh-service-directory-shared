@@ -21,7 +21,6 @@ public record ServiceChangeDto : DtoBase
     public ServiceStatusType Status { get; set; }
     public string? InterpretationServices { get; set; }
     public DeliverableType DeliverableType { get; set; }
-    public double? Distance { get; set; }
     public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<ServiceDeliveryDto> ServiceDeliveries { get; set; } = new List<ServiceDeliveryDto>();
     public ICollection<EligibilityDto> Eligibilities { get; set; } = new List<EligibilityDto>();
