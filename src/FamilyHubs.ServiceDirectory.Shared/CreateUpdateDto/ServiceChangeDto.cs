@@ -10,7 +10,6 @@ namespace FamilyHubs.ServiceDirectory.Shared.CreateUpdateDto;
 public record ServiceChangeDto : DtoBase
 {
     public long OrganisationId { get; set; }
-    public required string ServiceOwnerReferenceId { get; set; }
     public required string Name { get; set; }
     public string? Summary { get; set; }
     public string? Description { get; set; }
