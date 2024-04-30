@@ -28,4 +28,5 @@ public record ServiceDto : DtoBase
     public ICollection<TaxonomyDto> Taxonomies { get; set; } = new List<TaxonomyDto>();
     public ICollection<ScheduleDto> Schedules { get; set; } = new List<ScheduleDto>();
     public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
+    public ICollection<ServiceAtLocationDto> ServiceAtLocations { get; set; } = new List<ServiceAtLocationDto>();
 }
