@@ -4,7 +4,7 @@ namespace FamilyHubs.ServiceDirectory.Shared.Dto
 {
     public record ServiceAtLocationDto : DtoBase
     {
-        public LocationDto Location { get; set; } = default!;
+        public long LocationId { get; set; }
         public string? Description { get; set; }
         public ICollection<ScheduleDto> Schedules { get; set; } = new List<ScheduleDto>();
     }
