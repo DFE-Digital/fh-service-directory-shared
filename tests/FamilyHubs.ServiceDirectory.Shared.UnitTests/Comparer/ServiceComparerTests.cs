@@ -9,14 +9,12 @@ public class ServiceComparerTests : DtoComparerTestBase<ServiceDto, string>
     {
         Id = 0,
         OrganisationId = 123,
-        ServiceOwnerReferenceId = "Test",
         Name = "Test",
         ServiceType = ServiceType.InformationSharing,
     }, new ServiceDto
     {
         Id = 0,
         OrganisationId = 123,
-        ServiceOwnerReferenceId = "Test",
         Name = "Test",
         ServiceType = ServiceType.InformationSharing,
     }, dto => dto.Name)

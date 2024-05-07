@@ -10,7 +10,6 @@ namespace FamilyHubs.ServiceDirectory.Shared.CreateUpdateDto;
 public record ServiceChangeDto : DtoBase
 {
     public long OrganisationId { get; set; }
-    public required string ServiceOwnerReferenceId { get; set; }
     public required string Name { get; set; }
     public string? Summary { get; set; }
     public string? Description { get; set; }
@@ -21,7 +20,6 @@ public record ServiceChangeDto : DtoBase
     public ServiceStatusType Status { get; set; }
     public string? InterpretationServices { get; set; }
     public DeliverableType DeliverableType { get; set; }
-    public double? Distance { get; set; }
     public bool CanFamilyChooseDeliveryLocation { get; set; }
     public ICollection<ServiceDeliveryDto> ServiceDeliveries { get; set; } = new List<ServiceDeliveryDto>();
     public ICollection<EligibilityDto> Eligibilities { get; set; } = new List<EligibilityDto>();
@@ -29,7 +27,7 @@ public record ServiceChangeDto : DtoBase
     public ICollection<CostOptionDto> CostOptions { get; set; } = new List<CostOptionDto>();
     public ICollection<LanguageDto> Languages { get; set; } = new List<LanguageDto>();
     public ICollection<ServiceAreaDto> ServiceAreas { get; set; } = new List<ServiceAreaDto>();
-    public ICollection<ServiceAtLocationChangeDto> ServiceAtLocations { get; set; } = new List<ServiceAtLocationChangeDto>();
+    public ICollection<ServiceAtLocationDto> ServiceAtLocations { get; set; } = new List<ServiceAtLocationDto>();
     public ICollection<long> TaxonomyIds { get; set; } = new List<long>();
     public ICollection<ScheduleDto> Schedules { get; set; } = new List<ScheduleDto>();
     public ICollection<ContactDto> Contacts { get; set; } = new List<ContactDto>();
