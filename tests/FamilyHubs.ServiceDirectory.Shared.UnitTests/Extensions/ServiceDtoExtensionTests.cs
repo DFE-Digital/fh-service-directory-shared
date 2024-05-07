@@ -16,8 +16,7 @@ public class ServiceDtoExtensionTests
             Id = Random.Shared.Next(),
             ServiceType = ServiceType.NotSet,
             OrganisationId = Random.Shared.Next(),
-            Name = "TestService",
-            ServiceOwnerReferenceId = "serviceId1"
+            Name = "TestService"
         };
     }
 
