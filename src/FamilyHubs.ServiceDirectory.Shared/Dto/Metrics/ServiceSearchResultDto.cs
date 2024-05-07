@@ -1,8 +1,9 @@
+using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
+
 namespace FamilyHubs.ServiceDirectory.Shared.Dto.Metrics;
 
-public class ServiceSearchResultDto
+public record ServiceSearchResultDto : DtoBase
 {
-    public long? Id { get; set; }
     public long ServiceId { get; set; }
     public long? ServiceSearchesId { get; set; }
 }

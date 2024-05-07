@@ -1,10 +1,10 @@
+using FamilyHubs.ServiceDirectory.Shared.Dto.BaseDto;
 using FamilyHubs.ServiceDirectory.Shared.Enums;
 
 namespace FamilyHubs.ServiceDirectory.Shared.Dto.Metrics;
 
-public class ServiceSearchDto
+public record ServiceSearchDto : DtoBase
 {
-    public long? Id { get; set; }
     public EventDto? SearchTriggerEvent { get; set; }
     public ServiceDirectorySearchEventType SearchTriggerEventId { get; set; }
     public required string ServiceSearchType { get; set; }
