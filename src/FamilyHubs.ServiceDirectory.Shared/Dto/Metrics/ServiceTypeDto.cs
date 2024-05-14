@@ -2,7 +2,7 @@
 
 using FamilyHubs.ServiceDirectory.Shared.Enums;
 
-public class ServiceTypeDto
+public record ServiceTypeDto
 {
     public ServiceType Id { get; set; }
     public required string Name { get; set; }
