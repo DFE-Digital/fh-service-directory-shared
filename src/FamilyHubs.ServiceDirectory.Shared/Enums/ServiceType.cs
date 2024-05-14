@@ -1,10 +1,19 @@
 ﻿namespace FamilyHubs.ServiceDirectory.Shared.Enums;
 
-//I think we don't need ServiceType.
-//we should use AttendingAccessType
 public enum ServiceType
 {
-    NotSet             = 0, //May mean None or both
+    /// <summary>
+    /// Unset. May mean 'None' or 'Both'
+    /// </summary>
+    NotSet             = 0,
+    
+    /// <summary>
+    /// Relates to the 'Connect' application.
+    /// </summary>
     InformationSharing = 1,
+    
+    /// <summary>
+    /// Relates to the 'Find' application.
+    /// </summary>
     FamilyExperience   = 2
 }
